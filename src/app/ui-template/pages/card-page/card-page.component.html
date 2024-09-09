@@ -1,0 +1,37 @@
+<div class="text-3xl font-bold mb-2">Cards</div>
+
+<div class="flex flex-row space-x-2">
+  <Card theme="light" customClass="max-w-sm mb-2">
+    <ng-template #cardHeader>
+      <h2 class="text-xl font-semibold">Card Header</h2>
+    </ng-template>
+
+    <ng-template #cardBody>
+      <p>This is the body of the card. You can put any content here.</p>
+    </ng-template>
+
+    <ng-template #cardFooter>
+      <p>Card Footer Content</p>
+    </ng-template>
+  </Card>
+
+  <Card theme="dark" customClass="max-w-sm mb-2">
+    <ng-template #cardHeader>
+      <h2 class="text-xl font-semibold">Card Header</h2>
+    </ng-template>
+
+    <ng-template #cardBody>
+      <p>This is the body of the card. You can put any content here.</p>
+    </ng-template>
+
+    <ng-template #cardFooter>
+      <p>Card Footer Content</p>
+    </ng-template>
+  </Card>
+
+  <Card theme="light" customClass="max-w-sm mb-2">
+    <ng-template #cardBody>
+      <p>This is the body of the card. You can put any content here.</p>
+    </ng-template>
+  </Card>
+</div>
