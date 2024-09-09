@@ -1,0 +1,25 @@
+<div *ngIf="showAlert" [ngClass]="alertClasses">
+  <ng-content></ng-content>
+
+  <button
+    *ngIf="dismissible"
+    type="button"
+    class="absolute top-0 right-0 p-1.5 mt-1.5 mr-1.5 rounded-lg hover:bg-opacity-25"
+    (click)="dismissAlert()"
+  >
+    <svg
+      class="w-5 h-5 text-current"
+      fill="none"
+      stroke="currentColor"
+      viewBox="0 0 24 24"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        stroke-width="2"
+        d="M6 18L18 6M6 6l12 12"
+      ></path>
+    </svg>
+  </button>
+</div>
