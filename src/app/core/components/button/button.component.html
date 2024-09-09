@@ -1,0 +1,10 @@
+<button
+  [ngClass]="buttonClasses"
+  [class]="btnClass"
+  [type]="type"
+  (click)="onClick($event)"
+  (mouseover)="onHover($event)"
+  (mouseleave)="onBlur($event)"
+>
+  <ng-content></ng-content>
+</button>
