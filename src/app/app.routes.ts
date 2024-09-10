@@ -4,6 +4,7 @@ import {
   ButtonPageComponent,
   AlertPageComponent,
   CardPageComponent,
+  ModalPageComponent,
 } from './ui-template/pages';
 
 export const routes: Routes = [
@@ -23,6 +24,10 @@ export const routes: Routes = [
       {
         path: 'cards',
         component: CardPageComponent,
+      },
+      {
+        path: 'modals',
+        component: ModalPageComponent,
       },
       { path: '**', redirectTo: '/ui-template/buttons' },
     ],
