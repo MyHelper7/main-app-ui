@@ -1,0 +1,13 @@
+<div [ngClass]="cardClasses">
+  <div *ngIf="headerContent" [ngClass]="headerClasses">
+    <ng-container *ngTemplateOutlet="headerContent"></ng-container>
+  </div>
+
+  <div *ngIf="bodyContent" class="card-body">
+    <ng-container *ngTemplateOutlet="bodyContent"></ng-container>
+  </div>
+
+  <div *ngIf="footerContent" [ngClass]="footerClasses">
+    <ng-container *ngTemplateOutlet="footerContent"></ng-container>
+  </div>
+</div>

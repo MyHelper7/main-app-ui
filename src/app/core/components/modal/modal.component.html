@@ -1,0 +1,50 @@
+<div
+  [id]="id"
+  tabindex="-1"
+  [ngClass]="getModalContainerClassMap()"
+  (click)="onBackdropClick($event)"
+>
+  <div [ngClass]="getModalClassMap()">
+    <div class="relative rounded-lg bg-white shadow">
+      <div
+        *ngIf="headerContent"
+        class="flex items-start justify-between rounded-t border-b p-5"
+      >
+        <ng-container *ngTemplateOutlet="headerContent"></ng-container>
+        <button
+          type="button"
+          class="ms-auto inline-flex h-8 w-8 items-center justify-center rounded-lg bg-transparent text-sm text-gray-400 hover:bg-gray-200 hover:text-gray-900"
+          (click)="hide()"
+        >
+          <svg
+            class="h-3 w-3"
+            aria-hidden="true"
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 14 14"
+          >
+            <path
+              stroke="currentColor"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6"
+            />
+          </svg>
+          <span class="sr-only">Close modal</span>
+        </button>
+      </div>
+
+      <div class="space-y-6 p-6">
+        <ng-container *ngTemplateOutlet="bodyContent"></ng-container>
+      </div>
+
+      <div
+        *ngIf="footerContent"
+        class="flex items-center space-x-2 rtl:space-x-reverse rounded-b border-t border-gray-200 p-6"
+      >
+        <ng-container *ngTemplateOutlet="footerContent"></ng-container>
+      </div>
+    </div>
+  </div>
+</div>

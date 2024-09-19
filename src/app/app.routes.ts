@@ -1,6 +1,11 @@
 import { Routes } from '@angular/router';
 import { UiTemplateComponent } from './ui-template/ui-template.component';
-import { ButtonPageComponent, AlertPageComponent } from './ui-template/pages';
+import {
+  ButtonPageComponent,
+  AlertPageComponent,
+  CardPageComponent,
+  ModalPageComponent,
+} from './ui-template/pages';
 
 export const routes: Routes = [
   { path: '', redirectTo: '/ui-template', pathMatch: 'full' },
@@ -15,6 +20,14 @@ export const routes: Routes = [
       {
         path: 'alerts',
         component: AlertPageComponent,
+      },
+      {
+        path: 'cards',
+        component: CardPageComponent,
+      },
+      {
+        path: 'modals',
+        component: ModalPageComponent,
       },
       { path: '**', redirectTo: '/ui-template/buttons' },
     ],
