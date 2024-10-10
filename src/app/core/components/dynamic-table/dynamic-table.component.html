@@ -1,0 +1,74 @@
+<div [class.table-responsive]="responsive" [class.text-nowrap]="responsive">
+  <table [ngClass]="tableClass">
+    <caption class="ms-6" *ngIf="caption">
+      <core-dynamic-content [content]="caption"></core-dynamic-content>
+    </caption>
+    <thead>
+      <tr>
+        <th *ngFor="let column of header">
+          <core-dynamic-content [content]="column.label"></core-dynamic-content>
+
+          <span *ngIf="column.sortable" class="sortable-icon cursor-pointer" (click)="column.sortable ? sortData(column) : null">
+            <core-icon [name]="column.order === 'asc' ? 'up-arrow-alt' : 'down-arrow-alt'"></core-icon>
+          </span>
+        </th>
+      </tr>
+    </thead>
+    <tbody class="table-border-bottom-0">
+      <tr *ngFor="let row of sortedData" [ngClass]="bodyRowClass(row)">
+        <td *ngFor="let column of header">
+          <ng-container [ngSwitch]="column.type">
+            <ng-container *ngSwitchCase="'dropdown'">
+              <div class="dropdown">
+                <!-- <core-dropdown
+                  [variant]="row[column.key]?.variant"
+                  [arrowIcon]="false"
+                  [outline]="row[column.key]?.outline"
+                  [items]="row[column.key]?.items"
+                  [cssClass]="row[column.key]?.cssClass">
+                  <i class="bx bx-dots-vertical-rounded"></i>
+                </core-dropdown> -->
+              </div>
+            </ng-container>
+            <ng-container *ngSwitchCase="'badge'">
+              <core-badge [variant]="row[column.key]?.variant" [rounded]="row[column.key]?.rounded" [label]="row[column.key]?.label">
+                <core-dynamic-content [content]="row[column.key]?.value"></core-dynamic-content>
+              </core-badge>
+            </ng-container>
+            <ng-container *ngSwitchCase="'button-list'">
+              <ng-container *ngFor="let button of row[column.key]">
+                <core-button
+                  [variant]="button?.variant"
+                  [type]="button.type"
+                  [size]="button.size"
+                  [rounded]="button.rounded"
+                  [outline]="button.outline"
+                  [label]="button.label"
+                  [text]="button.text"
+                  [active]="button.active"
+                  [disabled]="button.disabled"
+                  [icon]="button.icon"
+                  [cssClass]="button.cssClass">
+                    {{button?.content}}
+                </core-button>
+              </ng-container>
+            </ng-container>
+            <ng-container *ngSwitchCase="'icon'">
+              <core-icon [name]="row[column.key]?.name" [cssClass]="row[column.key]?.cssClass"></core-icon>
+            </ng-container>
+            <ng-container *ngSwitchDefault>
+              <core-dynamic-content [content]="row[column.key]"></core-dynamic-content>
+            </ng-container>
+          </ng-container>
+        </td>
+      </tr>
+    </tbody>
+    <tfoot *ngIf="footer.length">
+      <tr>
+        <th *ngFor="let foot of footer">
+          <core-dynamic-content [content]="foot"></core-dynamic-content>
+        </th>
+      </tr>
+    </tfoot>
+  </table>  
+</div>

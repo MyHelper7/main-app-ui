@@ -1,0 +1,41 @@
+<div class="container-xxl flex-grow-1 container-p-y">            
+  <div class="card mb-6">
+    <h5 class="card-header">Pagination</h5>
+    <!-- Basic Pagination -->
+    <div class="card-body">
+      <div class="row">
+        <div class="col-lg-6">
+          <small class="text-light fw-medium">Basic</small>
+          <div class="d-flex flex-grow-1 flex-wrap mt-3">
+            <core-pagination [totalCount]="50" [activePage]="3" [showNextLastPage]="true" [showStartEndPage]="true"></core-pagination>
+            <core-pagination [totalCount]="50" [activePage]="3" shape="square" [showNextLastPage]="true" [showStartEndPage]="true"></core-pagination>
+          </div>
+        </div>
+        
+        <div class="col-lg-6">
+          <small class="text-light fw-medium">Sizes</small>
+          <div class="d-flex flex-grow-1 flex-wrap">
+            <core-pagination [totalCount]="50" [activePage]="1" [perPage]="10" size="sm"></core-pagination>
+            <core-pagination [totalCount]="50" [activePage]="5" [perPage]="10"></core-pagination>
+            <core-pagination [totalCount]="50" [activePage]="3" [perPage]="10" size="lg"></core-pagination>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Pagination Sizes -->
+  <div class="card mb-6">
+    <h5 class="card-header">Properties</h5>
+    <div class="card-body">
+      <div class="row">
+        <div class="col-lg-6">
+          <small class="text-light fw-medium">Disabled</small>
+          <div class="d-flex flex-grow-1 flex-wrap">
+            <core-pagination [totalCount]="50" [activePage]="3" [disabled]="true"></core-pagination>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--/ Pagination Sizes -->
+</div>

@@ -1,0 +1,69 @@
+<form>
+  <div *ngFor="let field of config?.fields" class="mb-3">
+    <core-input
+      [id]="field.id"
+      [type]="field!.type"
+      [size]="field.size"
+      [shape]="field.shape"
+      [placeholder]="field.placeholder"
+      [readonly]="field.readonly"
+      [disabled]="field.disabled"
+      [floating]="field.floating"
+      [options]="field.options"
+      [selectedOption]="field.selectedOption"
+      [selectedOptionValue]="field.selectedOptionValue"
+      [rows]="field.rows"
+      [checked]="field.checked"
+      [inline]="field.inline"
+      [accept]="field.accept"
+      [inputGroupAction]="field.inputGroupAction"
+      [inputContainercssClass]="field.inputContainercssClass"
+      [labelcssClass]="field.labelcssClass"
+      [inputcssClass]="field.inputcssClass"
+      [layoutcssClass]="field.layoutcssClass"
+      [labelWidth]="field.labelWidth"
+      [inputWidth]="field.inputWidth"
+      [layout]="field.layout">
+      <ng-template #label *ngIf="field.label">{{field.label}}</ng-template>
+      <ng-template #helpText *ngIf="field.helpText">{{field.helpText}}</ng-template>
+      <ng-template #startInputGroupHTML *ngIf="field.startInputGroupHTML">
+        <span class="d-inline-block" [innerHTML]="field.startInputGroupHTML"></span>
+      </ng-template>
+      <ng-template #endInputGroupHTML *ngIf="field.endInputGroupHTML">
+        <span class="d-inline-block" [innerHTML]="field.endInputGroupHTML"></span>
+      </ng-template>
+      <ng-template #startInputGroupContent *ngIf="field.startInputGroupContent">{{field.startInputGroupContent}}</ng-template>
+      <ng-template #endInputGroupContent *ngIf="field.endInputGroupContent">{{field.endInputGroupContent}}</ng-template>
+    </core-input>
+  </div>
+
+  <div *ngIf="config?.button" class="mb-3" [ngClass]="buttonContainerClass">
+    <ng-container [ngTemplateOutlet]="buttonTempate" [ngTemplateOutletContext]="{button: config.button}"></ng-container>
+  </div>
+
+  <div *ngIf="config?.buttons" class="mb-3" [ngClass]="buttonContainerClass">
+    <ng-container *ngFor="let button of config?.buttons">
+      <ng-container [ngTemplateOutlet]="buttonTempate" [ngTemplateOutletContext]="{button: button}"></ng-container>
+    </ng-container>
+  </div>
+</form>
+
+<ng-template #buttonTempate let-button="button">
+  <core-button
+    [variant]="button.variant"
+    [type]="button.type"
+    [size]="button.size"
+    [rounded]="button.rounded"
+    [outline]="button.outline"
+    [label]="button.label"
+    [text]="button.text"
+    [active]="button.active"
+    [disabled]="button.disabled"
+    [icon]="button.icon"
+    [cssClass]="button.cssClass">
+    <core-dynamic-content [content]="button.content"></core-dynamic-content>
+  </core-button>
+</ng-template>
+
+
+

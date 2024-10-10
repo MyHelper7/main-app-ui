@@ -1,0 +1,17 @@
+<div *ngIf="backdrop && isVisible" class="modal-backdrop fade show" (click)="handleBackdropClick($event)"></div>
+<div [ngClass]="modalClass" tabindex="-1" (click)="handleBackdropClick($event)">
+  <div [ngClass]="modalDialogClass" role="document">
+    <div class="modal-content">
+      <div class="modal-header" *ngIf="headerContent">
+        <core-dynamic-content [content]="headerContent"></core-dynamic-content>
+        <button type="button" class="btn-close" (click)="close($event)"></button>
+      </div>
+      <div class="modal-body">
+        <core-dynamic-content [content]="bodyContent"></core-dynamic-content>
+      </div>
+      <div class="modal-footer" *ngIf="footerContent">
+        <core-dynamic-content [content]="footerContent"></core-dynamic-content>
+      </div>
+    </div>
+  </div>
+</div>

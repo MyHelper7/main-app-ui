@@ -1,0 +1,37 @@
+// Badges
+// *******************************************************************************
+
+// Badge Center Style
+
+.badge-center {
+  padding: 3px;
+  line-height: 1.375;
+  @include badge-size($badge-height, $badge-width, $badge-center-font-size);
+  i {
+    font-size: 0.875rem;
+  }
+}
+
+.badge.badge-dot {
+  display: inline-block;
+  margin: 0;
+  padding: 0;
+  width: .5rem;
+  height: .5rem;
+  border-radius: 50%;
+  vertical-align: middle
+}
+
+.badge.badge-notifications {
+  position: absolute;
+  top: auto;
+  display: inline-block;
+  margin: 0;
+  transform: translate(-50%, -30%)
+}
+
+.badge.badge-notifications:not(.badge-dot) {
+  padding: .05rem .2rem;
+  font-size: .582rem;
+  line-height: .75rem
+}

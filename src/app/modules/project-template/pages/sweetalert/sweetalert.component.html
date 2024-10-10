@@ -1,0 +1,121 @@
+<div class="container-xxl flex-grow-1 container-p-y">
+  <div class="row">
+    <!-- Basic example section -->
+    <div class="col-12 mb-6">
+      <div class="card">
+        <h5 class="card-header">Basic Examples</h5>
+        <div class="card-body">
+          <span>
+            SweetAlert automatically centers itself on the page and looks great
+            no matter if you're using a desktop computer, mobile or tablet. It's
+            even highly customizable, as you can see below!
+          </span>
+          <div class="d-flex flex-grow-1 flex-wrap">
+            <button type="button" class="btn btn-primary" id="basic-alert" (click)="showSuccessAlert()">
+              Alert
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- /Basic example section -->
+  
+    <!-- Sweet alert Positions -->
+    <div class="col-12 mb-6">
+      <div class="card">
+        <h5 class="card-header">Position</h5>
+        <div class="card-body">
+          <span>
+            You can specify position of your alert with
+            <code>position : top | top-start | top-end | top-left | top-right
+              | center | center-start | center-end | center-left | center-right
+              | bottom | bottom-start | bottom-end | bottom-left | bottom-right</code>
+            in js
+          </span>
+          <div class="d-flex flex-grow-1 flex-wrap">
+  
+            <button class="btn btn-primary" (click)="positionAlert('top')">
+              Top
+            </button>
+            <button class="btn btn-primary" (click)="positionAlert('top-start')">
+              Top Start
+            </button>
+            <button class="btn btn-primary" (click)="positionAlert('top-end')">
+              Top End
+            </button>
+            <button class="btn btn-primary" (click)="positionAlert('top-left')">
+              Top Left
+            </button>
+            <button class="btn btn-primary" (click)="positionAlert('top-right')">
+              Top Right
+            </button>
+
+            <button class="btn btn-primary" (click)="positionAlert('center')">
+              Center
+            </button>
+            <button class="btn btn-primary" (click)="positionAlert('center-start')">
+              Center Start
+            </button>
+            <button class="btn btn-primary" (click)="positionAlert('center-end')">
+              Center End
+            </button>
+            <button class="btn btn-primary" (click)="positionAlert('center-left')">
+              Center Left
+            </button>
+            <button class="btn btn-primary" (click)="positionAlert('center-right')">
+              Center Right
+            </button>
+
+            <button class="btn btn-primary" (click)="positionAlert('bottom')">
+              Bottom
+            </button>
+            <button class="btn btn-primary" (click)="positionAlert('bottom-start')">
+              Bottom Start
+            </button>
+            <button class="btn btn-primary" (click)="positionAlert('bottom-end')">
+              Bottom End
+            </button>
+            <button class="btn btn-primary" (click)="positionAlert('bottom-left')">
+              Bottom Left
+            </button>
+            <button class="btn btn-primary" (click)="positionAlert('bottom-right')">
+              Bottom Right
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- /Sweet alert Positions -->
+  
+    <!-- Types section -->
+    <div class="col-12 mb-6">
+      <div class="card">
+        <h5 class="card-header">Types</h5>
+        <div class="card-body">
+          <span>
+            Use <code>icon</code> parameter to create a alert with type.
+          </span>
+          <div class="d-flex flex-grow-1 flex-wrap">
+  
+            <button type="button" class="btn btn-success" id="type-success" (click)="showSuccessAlert()">
+              Success
+            </button>
+            <button type="button" class="btn btn-info" id="type-info" (click)="showInfoAlert()">
+              Info
+            </button>
+            <button type="button" class="btn btn-warning" id="type-warning" (click)="showWarningAlert()">
+              Warning
+            </button>
+            <button type="button" class="btn btn-danger" id="type-error" (click)="showErrorAlert()">
+              Error
+            </button>
+            <button type="button" class="btn btn-secondary" id="type-question" (click)="showQuestionAlert()">
+              Question
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- /Types section -->
+  </div>
+</div>

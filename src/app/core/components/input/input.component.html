@@ -1,0 +1,146 @@
+<div class="row" [ngClass]="layoutcssClass" *ngIf="layout === 'horizontal'">
+  <div [ngClass]="['col-form-label', 'col-sm-' + labelWidth]">
+    <ng-container [ngTemplateOutlet]="labelTemplate"></ng-container>
+  </div>
+
+  <div [ngClass]="['col-sm-' + inputWidth]">
+    <div [ngClass]="inputContainerClass">
+      <ng-container [ngTemplateOutlet]="inputContainerTemplate"></ng-container>
+    </div>
+
+    <ng-container [ngTemplateOutlet]="helpTextTemplate"></ng-container>
+  </div>
+</div>
+
+<div [ngClass]="layoutcssClass" *ngIf="layout === 'vertical'">
+  <ng-container [ngTemplateOutlet]="labelTemplate" *ngIf="!labelAfterInput"></ng-container>
+
+  <div [ngClass]="inputContainerClass">
+    <ng-container [ngTemplateOutlet]="inputContainerTemplate"></ng-container>
+    <ng-container [ngTemplateOutlet]="labelTemplate" *ngIf="labelAfterInput"></ng-container>
+  </div>
+
+  <ng-container [ngTemplateOutlet]="helpTextTemplate" *ngIf="helpTextTemplate"></ng-container>
+</div>
+
+<ng-template #labelTemplate>
+  <label [for]="id" [ngClass]="labelClass" *ngIf="label">
+    <core-dynamic-content [content]="label"></core-dynamic-content>
+  </label>
+</ng-template>
+
+<ng-template #inputContainerTemplate>
+  <ng-container *ngIf="startInputGroupHTML || startInputGroupContent">
+    <ng-container *ngIf="startInputGroupHTML">
+      <ng-container [ngTemplateOutlet]="inputGroupTextTemplate" [ngTemplateOutletContext]="{content: startInputGroupHTML}"></ng-container>
+    </ng-container>
+    <ng-container *ngIf="startInputGroupContent">
+      <ng-container [ngTemplateOutlet]="startInputGroupContent"></ng-container>
+    </ng-container>
+  </ng-container>
+
+  <ng-container [ngTemplateOutlet]="inputTemplate"></ng-container>
+
+  <ng-container *ngIf="endInputGroupHTML || endInputGroupContent">
+    <ng-container *ngIf="endInputGroupHTML">
+      <ng-container [ngTemplateOutlet]="inputGroupTextTemplate" [ngTemplateOutletContext]="{content: endInputGroupHTML}"></ng-container>
+    </ng-container>
+    <ng-container *ngIf="endInputGroupContent">
+      <ng-container [ngTemplateOutlet]="endInputGroupContent"></ng-container>
+    </ng-container>
+  </ng-container>
+
+  <ng-container [ngTemplateOutlet]="toggleActionIconTemplate"></ng-container>
+
+  <ng-container [ngTemplateOutlet]="successTemplate"></ng-container>
+  <ng-container [ngTemplateOutlet]="errorsTemplate"></ng-container>
+</ng-template>
+
+<ng-template #inputGroupTextTemplate let-content="content">
+  <span class="input-group-text" [id]="fieldId">
+    <core-dynamic-content [content]="content"></core-dynamic-content>
+  </span>
+</ng-template>
+
+<ng-template #inputTemplate>
+  <ng-container [ngSwitch]="inputType">
+    <ng-container *ngSwitchCase="'text'">
+      <input type="text" [ngClass]="inputClass" [id]="fieldId" [placeholder]="placeholder" [readonly]="readonly" [disabled]="disabled">
+    </ng-container>
+    <ng-container *ngSwitchCase="'checkbox'">
+      <input type="checkbox" [ngClass]="inputClass" [id]="fieldId" [checked]="checked">
+    </ng-container>
+    <ng-container *ngSwitchCase="'radio'">
+      <input type="radio" [ngClass]="inputClass" [id]="fieldId" [checked]="checked">
+    </ng-container>
+    <ng-container *ngSwitchCase="'file'">
+      <input type="file" [ngClass]="inputClass" [id]="fieldId" [accept]="accept" [multiple]="type === 'multiplefile'">
+    </ng-container>
+    <ng-container *ngSwitchCase="'select'">
+      <select [ngClass]="inputClass" [id]="fieldId">
+        <ng-container *ngFor="let option of options">
+          <option [value]="option.value" [selected]="option?.value === selectedOption?.value">{{ option.label }}</option>
+        </ng-container>
+      </select>
+    </ng-container>
+    <ng-container *ngSwitchCase="'multiselect'">
+      <select [ngClass]="inputClass" [id]="fieldId" multiselect="true">
+        <ng-container *ngFor="let option of options">
+          <option [value]="option.value" [selected]="option?.value === selectedOption?.value">{{ option.label }}</option>
+        </ng-container>
+      </select>
+    </ng-container>
+    <ng-container *ngSwitchCase="'datalist'">
+      <input [ngClass]="inputClass" list="datalist" [id]="fieldId" [placeholder]="placeholder">
+      <datalist id="datalist">
+        <ng-container *ngFor="let option of options">
+          <option [value]="option.value">{{ option.label }}</option>
+        </ng-container>
+      </datalist>
+    </ng-container>
+    <ng-container *ngSwitchCase="'textarea'">
+      <textarea [ngClass]="inputClass" [id]="fieldId" [rows]="rows"></textarea>
+    </ng-container>
+    <ng-container *ngSwitchDefault>
+      <input [type]="inputType" [ngClass]="inputClass" [id]="fieldId" [placeholder]="placeholder" [readonly]="readonly" [disabled]="disabled">
+    </ng-container>
+  </ng-container>
+</ng-template>
+
+<ng-template #helpTextTemplate>
+  <div class="form-text" *ngIf="helpText">
+    <core-dynamic-content [content]="helpText"></core-dynamic-content>
+  </div>
+</ng-template>
+
+<ng-template #toggleActionIconTemplate>
+  <span class="input-group-text cursor-pointer" [id]="fieldId" (click)="updateActionFlag()" *ngIf="toogleActionIcon">
+    <core-icon [name]="toogleActionIcon"></core-icon>
+  </span>
+</ng-template>
+
+<ng-template #successTemplate>
+  <div *ngIf="showSuccess" class="small valid-feedback mt-1 cursor-default">
+    <!-- <ng-container *ngFor="let errorObj of errors | keyvalue">
+      <div *ngIf="errors['required']">{{label}} is required</div>
+      <div *ngIf="errors[INPUT_TYPE_VALIDATIONS.EMAIL]">{{label}} must be valid email</div>
+      <div *ngIf="errors[INPUT_TYPE_VALIDATIONS.MAX_LENGTH]">{{label}} must be less than {{errors[INPUT_TYPE_VALIDATIONS.MAX_LENGTH]?.requiredLength}} characters</div>
+      <div *ngIf="errors[INPUT_TYPE_VALIDATIONS.MIN_LENGTH]">{{label}} must be more than {{errors[INPUT_TYPE_VALIDATIONS.MIN_LENGTH]?.requiredLength}} characters</div>
+    </ng-container> -->
+
+    <core-dynamic-content [content]="customSuccessMessage"></core-dynamic-content>
+  </div>
+</ng-template>
+
+<ng-template #errorsTemplate>
+  <div *ngIf="showError" class="small invalid-feedback mt-1 cursor-default">
+    <!-- <ng-container *ngFor="let errorObj of errors | keyvalue">
+      <div *ngIf="errors['required']">{{label}} is required</div>
+      <div *ngIf="errors[INPUT_TYPE_VALIDATIONS.EMAIL]">{{label}} must be valid email</div>
+      <div *ngIf="errors[INPUT_TYPE_VALIDATIONS.MAX_LENGTH]">{{label}} must be less than {{errors[INPUT_TYPE_VALIDATIONS.MAX_LENGTH]?.requiredLength}} characters</div>
+      <div *ngIf="errors[INPUT_TYPE_VALIDATIONS.MIN_LENGTH]">{{label}} must be more than {{errors[INPUT_TYPE_VALIDATIONS.MIN_LENGTH]?.requiredLength}} characters</div>
+    </ng-container> -->
+
+    <core-dynamic-content [content]="customErrorMessage"></core-dynamic-content>
+  </div>
+</ng-template>

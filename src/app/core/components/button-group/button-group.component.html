@@ -1,0 +1,18 @@
+<div class="btn-group" role="group" aria-label="Button group">
+  <ng-container *ngFor="let button of buttons; let last = last;">
+    <ng-container *ngIf="button.dropdown; else normalButton">
+      <!-- <core-dropdown
+        [variant]="button.variant!"
+        [items]="button.dropdownItems!"
+        [cssClass]="last ? 'rounded-0 rounded-end' : 'rounded-0'">
+        {{ button.text }}
+      </core-dropdown> -->
+    </ng-container>
+    <ng-template #normalButton>
+      <button type="button" class="btn {{ buttonClass(button) }}">
+        <i *ngIf="button.icon" class="{{ button.icon }}"></i>
+        {{ button.text }}
+      </button>
+    </ng-template>
+  </ng-container>
+</div>

@@ -1,0 +1,40 @@
+<nav>
+  <ul [ngClass]="paginationClass" *ngIf="lastPage > 1">
+    <li class="page-item" [class.disabled]="activePage == firstPage" *ngIf="showStartEndPage">
+      <button type="button" class="btn page-link" [disabled]="activePage <= 1 || disabled" (click)="changePage(1)">
+        <core-icon name="chevrons-left" cssClass="tf-icon"></core-icon>
+      </button>
+    </li>
+
+    <li class="page-item" [class.disabled]="activePage == firstPage" *ngIf="showNextLastPage">
+      <button type="button" class="btn page-link" [disabled]="activePage == firstPage || disabled" (click)="previousPage()">
+        <core-icon name="chevron-left" cssClass="tf-icon"></core-icon>
+      </button>
+    </li>
+
+    <ng-container *ngFor="let page of paginators">
+      <li class="page-item" [ngClass]="{active: activePage == page}">
+        <button type="button" class="btn page-link" [disabled]="disabled" (click)="changePage(page)">{{page}}</button>
+      </li>
+    </ng-container>
+
+    <li class="page-item" [class.disabled]="activePage == lastPage" *ngIf="showNextLastPage">
+      <button type="button" class="btn page-link" [disabled]="activePage == lastPage || disabled" (click)="nextPage()">
+        <core-icon name="chevron-right" cssClass="tf-icon"></core-icon>
+      </button>
+    </li>
+
+    <li class="page-item" [class.disabled]="activePage == lastPage" *ngIf="showStartEndPage">
+      <button type="button" class="btn page-link" [disabled]="activePage == lastPage || disabled" (click)="changePage(paginators.length)">
+        <core-icon name="chevrons-right" cssClass="tf-icon"></core-icon>
+      </button>
+    </li>
+  </ul>
+  <div>
+    Showing
+    <ng-container *ngIf="startCount">
+      {{startCount}} to {{endCount}} of 
+    </ng-container>
+    {{totalCount}} entries
+  </div>
+</nav>

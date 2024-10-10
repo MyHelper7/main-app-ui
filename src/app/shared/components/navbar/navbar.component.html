@@ -1,0 +1,34 @@
+<nav
+  class="layout-navbar container-xxl navbar navbar-expand-xl align-items-center bg-navbar-theme navbar-shadow-sm"
+  [ngClass]="{'hidden': !isNavbarVisible}"
+  id="layout-navbar">
+  <div class="layout-menu-toggle navbar-nav align-items-xl-center me-4 me-xl-0 d-xl-none">
+    <button class="nav-item nav-link px-0 me-xl-6" (click)="toggleSidebar()">
+      <core-icon name="menu-alt-left" size="lg"></core-icon>
+    </button>
+  </div>
+
+  <div class="navbar-nav-right d-flex align-items-center" id="navbar-collapse">
+    <ul class="navbar-nav flex-row align-items-center ms-auto">
+      <li class="nav-item me-3 me-xl-2" *ngFor="let option of navbarOptions">
+        <ng-container [ngSwitch]="option.type">
+          <ng-container *ngSwitchCase="'dropdown'">
+            <div class="navbar-dropdown dropdown-user dropdown">
+              <core-dropdown [items]="option.items" containercssClass="" cssClass="nav-link {{option.cssClass}}" direction="end">
+                <ng-container *ngIf="option.avatar">
+                  <div class="avatar">
+                    <img [src]="option.avatar.url" alt class="w-px-40 h-auto rounded-circle" />
+                  </div>
+                </ng-container>
+
+                <ng-container *ngIf="option.icon">
+                  <core-icon [name]="option.icon.name" cssClass="{{option.icon.cssClass}} cursor-pointer" [size]="option.icon.size"></core-icon>
+                </ng-container>
+              </core-dropdown>
+            </div>
+          </ng-container>
+        </ng-container>
+      </li>
+    </ul>
+  </div>
+</nav>

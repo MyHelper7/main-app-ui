@@ -1,0 +1,67 @@
+<span
+  class="d-inline-block"
+  [ngClass]="containerClass"
+  ngbDropdown
+  [display]="direction == 'auto' ? 'dynamic' : 'static'">
+  <span 
+    ngbDropdownToggle
+    [ngClass]="dropdownClass">
+    <ng-content></ng-content>
+  </span>
+
+  <ul [ngClass]="dropdownMenueClass" ngbDropdownMenu>
+    <li *ngFor="let item of items">
+      <ng-container [ngSwitch]="item.type">
+        <ng-container *ngSwitchCase="'header'">
+          <h6 class="dropdown-header text-uppercase">
+            <ng-container [ngTemplateOutlet]="optionTemplate" [ngTemplateOutletContext]="{item: item}"></ng-container>
+          </h6>
+        </ng-container>
+
+        <ng-container *ngSwitchCase="'template'">
+          <ng-container *ngIf="item.template">
+            <ng-container *ngTemplateOutlet="item.template"></ng-container>
+          </ng-container>
+        </ng-container>
+
+        <ng-container *ngSwitchCase="'button'">
+          <button type="button" ngbDropdownItem [ngClass]="dropdownItemClass" (click)="item?.action($event)">
+            <ng-container [ngTemplateOutlet]="optionTemplate" [ngTemplateOutletContext]="{item: item}"></ng-container>
+          </button>
+        </ng-container>
+
+        <ng-container *ngSwitchCase="'external-link'">
+          <a ngbDropdownItem [ngClass]="dropdownItemClass" class="cursor-pointer" [href]="item.url">
+            <ng-container [ngTemplateOutlet]="optionTemplate" [ngTemplateOutletContext]="{item: item}"></ng-container>
+          </a>
+        </ng-container>
+
+        <ng-container *ngSwitchCase="'internal-link'">
+          <a ngbDropdownItem [ngClass]="dropdownItemClass" class="cursor-pointer" [routerLink]="item.url">
+            <ng-container [ngTemplateOutlet]="optionTemplate" [ngTemplateOutletContext]="{item: item}"></ng-container>
+          </a>
+        </ng-container>
+
+        <ng-container *ngSwitchCase="'text'">
+          <span ngbDropdownItem [ngClass]="dropdownItemClass" class="cursor-default">
+            <ng-container [ngTemplateOutlet]="optionTemplate" [ngTemplateOutletContext]="{item: item}"></ng-container>
+          </span>
+        </ng-container>
+
+        <ng-container *ngSwitchCase="'divider'">
+          <div class="dropdown-divider"></div>
+        </ng-container>
+      </ng-container>
+    </li>
+  </ul>
+</span>
+
+<ng-template #optionTemplate let-item='item'>
+  <span class="d-flex align-items-center align-middle">
+    <core-icon [name]="item.icon.name" [cssClass]="item.icon.cssClass" *ngIf="item.icon"></core-icon>
+    <span class="flex-grow-1 align-middle">
+      <core-dynamic-content [content]="item.text"></core-dynamic-content>
+    </span>
+    <core-badge variant="danger" [rounded]="true" cssClass="flex-shrink-0" *ngIf="item.badge">{{item.badge}}</core-badge>
+  </span>    
+</ng-template>

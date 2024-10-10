@@ -1,0 +1,123 @@
+<div class="container-xxl flex-grow-1 container-p-y">
+  <!-- Tooltips -->
+  <div class="card mb-6">
+    <h5 class="card-header">Tooltips</h5>
+    <div class="card-body">
+      <div class="text-light small fw-medium">Directions</div>
+      <div class="row demo-vertical-spacing">
+        <div class="col">
+          <core-tooltip placement="right" tooltipContent="Tooltip on right">
+            <core-button variant="primary">Right</core-button>
+          </core-tooltip>
+        </div>
+        <div class="col">
+          <core-tooltip placement="left" tooltipContent="Tooltip on left">
+            <core-button variant="primary">Left</core-button>
+          </core-tooltip>
+        </div>
+        <div class="col">
+          <core-tooltip placement="top" [tooltipContent]="tooltipOnTop">
+            <core-button variant="primary">Top</core-button>
+          </core-tooltip>
+          <ng-template #tooltipOnTop>
+            <i class='bx bx-bell bx-xs'></i> <span>Tooltip on top</span>
+          </ng-template>
+        </div>
+        <div class="col">
+          <core-tooltip placement="bottom" [tooltipContent]="tooltipOnBottom">
+            <core-button variant="primary">Bottom</core-button>
+          </core-tooltip>
+          <ng-template #tooltipOnBottom>
+            <i class='bx bx-bell bx-xs'></i> <span>Tooltip on bottom</span>
+          </ng-template>
+        </div>
+      </div>
+    </div>
+
+    <hr class="m-0">
+
+    <div class="card-body">
+      <div class="text-light small fw-medium">Trigger</div>
+  
+      <div class="row demo-vertical-spacing">
+        <div class="col">
+          <core-tooltip autoClose="inside" tooltipContent="Click Inside">
+            <core-button variant="primary">Click Inside</core-button>
+          </core-tooltip>
+        </div>
+        <div class="col">
+          <core-tooltip autoClose="outside" tooltipContent="Click Outside">
+            <core-button variant="primary">Click Outside</core-button>
+          </core-tooltip>
+        </div>
+        <div class="col">
+          <core-tooltip tooltipContent="Automatically">
+            <core-button variant="primary">Automatically</core-button>
+          </core-tooltip>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--/ Tooltips -->
+
+  <!-- Popovers -->
+  <div class="card">
+    <h5 class="card-header">Popovers</h5>
+    <div class="card-body">
+      <div class="text-light small fw-medium">Directions</div>
+      <div class="row demo-vertical-spacing">
+        <div class="col">
+          <core-popover placement="right" popoverTitle="Popover Title" popoverContent="Tooltip on right">
+            <core-button variant="primary">Right</core-button>
+          </core-popover>
+        </div>
+        <div class="col">
+          <core-popover placement="left" popoverTitle="Popover Title" popoverContent="Tooltip on left">
+            <core-button variant="primary">Left</core-button>
+          </core-popover>
+        </div>
+        <div class="col">
+          <core-popover placement="top" popoverTitle="Popover Title" [popoverContent]="popoverOnTop">
+            <core-button variant="primary">Top</core-button>
+          </core-popover>
+          <ng-template #popoverOnTop>
+            <i class='bx bx-bell bx-xs'></i> <span>Popover on top</span>
+          </ng-template>
+        </div>
+        <div class="col">
+          <core-popover placement="bottom" [popoverContent]="popoverOnBottom">
+            <core-button variant="primary">Bottom</core-button>
+          </core-popover>
+          <ng-template #popoverOnBottom>
+            <i class='bx bx-bell bx-xs'></i> <span>Popover on bottom</span>
+          </ng-template>
+        </div>
+      </div>
+    </div>
+
+    <hr class="m-0">
+
+    <div class="card-body">
+      <div class="text-light small fw-medium">Trigger</div>
+  
+      <div class="row demo-vertical-spacing">
+        <div class="col">
+          <core-popover autoClose="inside" popoverContent="Click Inside">
+            <core-button variant="primary">Click Inside</core-button>
+          </core-popover>
+        </div>
+        <div class="col">
+          <core-popover autoClose="outside" popoverContent="Click Outside">
+            <core-button variant="primary">Click Outside</core-button>
+          </core-popover>
+        </div>
+        <div class="col">
+          <core-popover popoverContent="Automatically">
+            <core-button variant="primary">Automatically</core-button>
+          </core-popover>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--/ Popovers -->
+</div>

@@ -1,0 +1,29 @@
+<!-- <div [ngClass]="{'toast': true, 'toast-success': true, 'fade': options?.animation}" role="alert">
+  <div class="toast-header">
+    <i class="bx bx-bell me-2"></i>
+    <strong class="me-auto fw-medium">{{ title }}</strong>
+    <button type="button" class="btn-close" (click)="close()" *ngIf="options?.closeEnabled"></button>
+  </div>
+  <div class="toast-body">
+    <core-dynamic-content [content]="content"></core-dynamic-content>
+  </div>
+</div> -->
+
+<div
+      class="bs-toast toast fade show"
+      [ngClass]="toastClass"
+      role="alert"
+      aria-live="assertive"
+      aria-atomic="true"
+    >
+      <div class="toast-header">
+        <i class="bx bx-bell me-2"></i>
+        <div class="me-auto fw-medium">
+          <core-dynamic-content [content]="title"></core-dynamic-content>
+        </div>
+        <button type="button" class="btn-close" (click)="close()" aria-label="Close" *ngIf="options?.closeEnabled"></button>
+      </div>
+      <div class="toast-body">
+        <core-dynamic-content [content]="content"></core-dynamic-content>
+      </div>
+    </div>

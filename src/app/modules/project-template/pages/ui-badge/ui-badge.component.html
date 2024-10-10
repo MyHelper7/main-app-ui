@@ -1,0 +1,243 @@
+<div class="container-xxl flex-grow-1 container-p-y">
+  <div class="row g-6 mb-6">
+    <!-- Basic Badges -->
+    <div class="col-lg">
+      <div class="card">
+        <h5 class="card-header">Basic Badges</h5>
+        <div class="card-body">
+          <div class="text-light small fw-medium">Default</div>
+          <div class="d-flex flex-grow-1 flex-wrap">
+            <core-badge variant="primary">Primary</core-badge>
+            <core-badge variant="secondary">Secondary</core-badge>
+            <core-badge variant="success">Success</core-badge>
+            <core-badge variant="danger">Danger</core-badge>
+            <core-badge variant="warning">Warning</core-badge>
+            <core-badge variant="info">Info</core-badge>
+            <core-badge variant="dark">Dark</core-badge>
+          </div>
+        </div>
+        <hr class="m-0">
+        <div class="card-body">
+          <div class="text-light small fw-medium">Pills</div>
+  
+          <div class="d-flex flex-grow-1 flex-wrap">
+            <core-badge variant="primary" [rounded]="true">Primary</core-badge>
+            <core-badge variant="secondary" [rounded]="true">Secondary</core-badge>
+            <core-badge variant="success" [rounded]="true">Success</core-badge>
+            <core-badge variant="danger" [rounded]="true">Danger</core-badge>
+            <core-badge variant="warning" [rounded]="true">Warning</core-badge>
+            <core-badge variant="info" [rounded]="true">Info</core-badge>
+            <core-badge variant="dark" [rounded]="true">Dark</core-badge>
+          </div>
+        </div>
+      </div>
+    </div>
+  
+    <!-- Label Badges -->
+    <div class="col-lg">
+      <div class="card">
+        <h5 class="card-header">Label Badges</h5>
+        <div class="card-body">
+          <div class="text-light small fw-medium">Label Default</div>
+
+          <div class="d-flex flex-grow-1 flex-wrap">
+            <core-badge variant="primary" [label]="true">Primary</core-badge>
+            <core-badge variant="secondary" [label]="true">Secondary</core-badge>
+            <core-badge variant="success" [label]="true">Success</core-badge>
+            <core-badge variant="danger" [label]="true">Danger</core-badge>
+            <core-badge variant="warning" [label]="true">Warning</core-badge>
+            <core-badge variant="info" [label]="true">Info</core-badge>
+            <core-badge variant="dark" [label]="true">Dark</core-badge>
+          </div>
+        </div>
+        <hr class="m-0">
+        <div class="card-body">
+          <div class="text-light small fw-medium">Label Pills</div>
+
+          <div class="d-flex flex-grow-1 flex-wrap">
+            <core-badge variant="primary" [label]="true" [rounded]="true">Primary</core-badge>
+            <core-badge variant="secondary" [label]="true" [rounded]="true">Secondary</core-badge>
+            <core-badge variant="success" [label]="true" [rounded]="true">Success</core-badge>
+            <core-badge variant="danger" [label]="true" [rounded]="true">Danger</core-badge>
+            <core-badge variant="warning" [label]="true" [rounded]="true">Warning</core-badge>
+            <core-badge variant="info" [label]="true" [rounded]="true">Info</core-badge>
+            <core-badge variant="dark" [label]="true" [rounded]="true">Dark</core-badge>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row gap-6">
+    <!-- Badge Circle -->
+    <div class="col-12">
+      <div class="card">
+        <h5 class="card-header"> Badge Circle &amp; Square Style</h5>
+        <div class="card-body">
+          <div class="row gy-3">
+            <div class="col-xl-6">
+              <h6>Basic</h6>
+              <div class="text-light small fw-medium mb-2">Default</div>
+              <div class="d-flex flex-grow-1 flex-wrap">
+                <p>
+                  <core-badge variant="primary" [rounded]="true">1</core-badge>
+                  <core-badge variant="secondary" [rounded]="true">2</core-badge>
+                  <core-badge variant="success" [rounded]="true">3</core-badge>
+                  <core-badge variant="danger" [rounded]="true">4</core-badge>
+                  <core-badge variant="warning" [rounded]="true">5</core-badge>
+                  <core-badge variant="info" [rounded]="true">6</core-badge>
+                </p>
+                <p>
+                  <core-badge variant="primary">1</core-badge>
+                  <core-badge variant="secondary">2</core-badge>
+                  <core-badge variant="success">3</core-badge>
+                  <core-badge variant="danger">4</core-badge>
+                  <core-badge variant="warning">5</core-badge>
+                  <core-badge variant="info">6</core-badge>
+                </p>
+              </div>
+            </div>
+            <div class="col-xl-6">
+              <h6>Label</h6>
+              <div class="text-light small fw-medium mb-2">Default</div>
+              <div class="d-flex flex-grow-1 flex-wrap">
+                <p>
+                  <core-badge variant="primary" [rounded]="true" [label]="true">1</core-badge>
+                  <core-badge variant="secondary" [rounded]="true" [label]="true">2</core-badge>
+                  <core-badge variant="success" [rounded]="true" [label]="true">3</core-badge>
+                  <core-badge variant="danger" [rounded]="true" [label]="true">4</core-badge>
+                  <core-badge variant="warning" [rounded]="true" [label]="true">5</core-badge>
+                  <core-badge variant="info" [rounded]="true" [label]="true">6</core-badge>
+                </p>
+                <p>
+                  <core-badge variant="primary" [label]="true">1</core-badge>
+                  <core-badge variant="secondary" [label]="true">2</core-badge>
+                  <core-badge variant="success" [label]="true">3</core-badge>
+                  <core-badge variant="danger" [label]="true">4</core-badge>
+                  <core-badge variant="warning" [label]="true">5</core-badge>
+                  <core-badge variant="info" [label]="true">6</core-badge>
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Badge Circle with Icons -->
+    <div class="col-12">
+      <div class="card">
+        <h5 class="card-header">Badge Circle &amp; Square With Icon</h5>
+        <div class="card-body">
+          <div class="row gy-3">
+            <div class="col-xl-6">
+              <h6>Basic</h6>
+              <div class="text-light small fw-medium mb-2">Default</div>
+              <div class="d-flex flex-grow-1 flex-wrap">
+                <p>
+                  <core-badge variant="primary" [rounded]="true"><i class="bx bx-star"></i></core-badge>
+                  <core-badge variant="secondary" [rounded]="true"><i class="bx bx-bell"></i></core-badge>
+                  <core-badge variant="success" [rounded]="true"><i class="bx bx-check"></i></core-badge>
+                  <core-badge variant="danger" [rounded]="true"><i class="bx bx-dollar"></i></core-badge>
+                  <core-badge variant="warning" [rounded]="true"><i class="bx bx-pie-chart-alt"></i></core-badge>
+                  <core-badge variant="info" [rounded]="true"><i class="bx bx-trending-up"></i></core-badge>
+                </p>
+                <p>
+                  <core-badge variant="primary"><i class="bx bx-star"></i></core-badge>
+                  <core-badge variant="secondary"><i class="bx bx-bell"></i></core-badge>
+                  <core-badge variant="success"><i class="bx bx-check"></i></core-badge>
+                  <core-badge variant="danger"><i class="bx bx-dollar"></i></core-badge>
+                  <core-badge variant="warning"><i class="bx bx-pie-chart-alt"></i></core-badge>
+                  <core-badge variant="info"><i class="bx bx-trending-up"></i></core-badge>
+                </p>
+              </div>
+            </div>
+            <div class="col-xl-6">
+              <h6>Label</h6>
+              <div class="text-light small fw-medium mb-2">Default</div>
+              <div class="d-flex flex-grow-1 flex-wrap">
+                <p>
+                  <core-badge variant="primary" [rounded]="true" [label]="true"><i class="bx bx-star"></i></core-badge>
+                  <core-badge variant="secondary" [rounded]="true" [label]="true"><i class="bx bx-bell"></i></core-badge>
+                  <core-badge variant="success" [rounded]="true" [label]="true"><i class="bx bx-check"></i></core-badge>
+                  <core-badge variant="danger" [rounded]="true" [label]="true"><i class="bx bx-dollar"></i></core-badge>
+                  <core-badge variant="warning" [rounded]="true" [label]="true"><i class="bx bx-pie-chart-alt"></i></core-badge>
+                  <core-badge variant="info" [rounded]="true" [label]="true"><i class="bx bx-trending-up"></i></core-badge>
+                </p>
+                <p>
+                  <core-badge variant="primary" [label]="true"><i class="bx bx-star"></i></core-badge>
+                  <core-badge variant="secondary" [label]="true"><i class="bx bx-bell"></i></core-badge>
+                  <core-badge variant="success" [label]="true"><i class="bx bx-check"></i></core-badge>
+                  <core-badge variant="danger" [label]="true"><i class="bx bx-dollar"></i></core-badge>
+                  <core-badge variant="warning" [label]="true"><i class="bx bx-pie-chart-alt"></i></core-badge>
+                  <core-badge variant="info" [label]="true"><i class="bx bx-trending-up"></i></core-badge>
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Notifications -->
+    <div class="col-12">
+      <div class="card">
+        <h5 class="card-header">Notifications</h5>
+        <div class="card-body d-flex flex-grow-1 flex-wrap">
+          <button type="button" class="btn btn-label-primary text-nowrap d-inline-flex position-relative me-4">
+            Badge
+            <core-badge variant="primary" [rounded]="true" [fitContent]="true" cssClass="position-absolute top-0 start-100 translate-middle ">12</core-badge>
+          </button>
+          <button type="button" class="btn btn-label-warning text-nowrap d-inline-flex position-relative me-4">
+            Label Badge
+            <core-badge variant="warning" [rounded]="true" [fitContent]="true" cssClass="position-absolute top-0 start-100 translate-middle ">12</core-badge>
+          </button>
+          <button type="button" class="btn btn-label-info text-nowrap d-inline-flex position-relative me-4">
+            Pill
+            <core-badge variant="info" [rounded]="true" [fitContent]="true" cssClass="position-absolute top-0 start-100 translate-middle ">12</core-badge>
+          </button>
+          <button type="button" class="btn btn-label-danger text-nowrap d-inline-flex position-relative">
+            Dot
+            <core-badge variant="danger" type="dot" [rounded]="true" [fitContent]="true" cssClass="position-absolute top-0 start-100 translate-middle p-2"></core-badge>
+          </button>
+          <button type="button" class="btn text-nowrap d-inline-block">
+            <span class="tf-icons bx bx-xs bx-envelope"></span>
+            <core-badge variant="primary" type="notifications">6</core-badge>
+          </button>
+          <button type="button" class="btn text-nowrap d-inline-block">
+            <span class="tf-icons bx bxl-twitter"></span>
+            <core-badge variant="info" type="notifications" [rounded]="true">6</core-badge>
+          </button>
+          <button type="button" class="btn text-nowrap d-inline-block">
+            <span class="tf-icons bx bx-xs bx-bell"></span>
+            <core-badge variant="danger" type="notifications" [rounded]="true">10</core-badge>
+          </button>
+        </div>
+      </div>
+    </div>
+    <!-- Dots -->
+    <div class="col-12">
+      <div class="card">
+        <h5 class="card-header">Dots Style</h5>
+        <div class="card-body d-sm-flex d-block">
+          <div class="d-flex align-items-center lh-1 me-4 mb-4 mb-sm-0">
+            <core-badge variant="primary" type="dot" cssClass=" me-1"></core-badge> Primary
+          </div>
+          <div class="d-flex align-items-center lh-1 me-4 mb-4 mb-sm-0">
+            <core-badge variant="secondary" type="dot" cssClass=" me-1"></core-badge> Secondary
+          </div>
+          <div class="d-flex align-items-center lh-1 me-4 mb-4 mb-sm-0">
+            <core-badge variant="success" type="dot" cssClass=" me-1"></core-badge> Success
+          </div>
+          <div class="d-flex align-items-center lh-1 me-4 mb-4 mb-sm-0">
+            <core-badge variant="danger" type="dot" cssClass=" me-1"></core-badge> Danger
+          </div>
+          <div class="d-flex align-items-center lh-1 me-4 mb-4 mb-sm-0">
+            <core-badge variant="warning" type="dot" cssClass=" me-1"></core-badge> Warning
+          </div>
+          <div class="d-flex align-items-center lh-1 me-4 mb-4 mb-sm-0">
+            <core-badge variant="info" type="dot" cssClass=" me-1"></core-badge> Info
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

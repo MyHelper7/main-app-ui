@@ -1,0 +1,320 @@
+<div class="container-xxl flex-grow-1 container-p-y">
+  <div class="row g-6">
+    <div class="col-md-6">
+      <div class="card">
+        <h5 class="card-header">Default</h5>
+        <div class="card-body">
+          <div>
+            <core-input type="text" id="defaultFormControlInput" placeholder="John Doe">
+              <ng-template #label>Name</ng-template>
+              <ng-template #helpText>We'll never share your details with anyone else.</ng-template>
+            </core-input>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div class="card">
+        <h5 class="card-header">Float label</h5>
+        <div class="card-body">
+          <core-input type="text" id="floatingInput" placeholder="John Doe" [floating]="true">
+            <ng-template #label>Name</ng-template>
+            <ng-template #helpText>We'll never share your details with anyone else.</ng-template>
+          </core-input>
+        </div>
+      </div>
+    </div>
+  
+    <!-- Form controls -->
+    <div class="col-md-6">
+      <div class="card">
+        <h5 class="card-header">Form Controls</h5>
+        <div class="card-body">
+          <div class="mb-4">
+            <core-input type="email" id="exampleFormControlInput1" placeholder="name@example.com">
+              <ng-template #label>Email address</ng-template>
+            </core-input>
+          </div>
+          <div class="mb-4">
+            <core-input type="text" id="exampleFormControlInput2" placeholder="name@example.com" [readonly]="true">
+              <ng-template #label>Read only</ng-template>
+            </core-input>
+          </div>
+          <div class="mb-4">
+            <core-input type="text" id="exampleFormControlInput3" [plaintext]="true" placeholder="email@example.com">
+              <ng-template #label>Plaintext</ng-template>
+            </core-input>
+          </div>
+          <div class="mb-4">
+            <core-input type="select" id="exampleFormControlSelect1" placeholder="Select Option" selectedOptionValue="3" [options]="selectOptions">
+              <ng-template #label>Example select</ng-template>
+            </core-input>
+          </div>
+          <div class="mb-4">
+            <core-input type="datalist" id="exampleDatalist" placeholder="Type to search..." [options]="selectOptions">
+              <ng-template #label>Datalist example</ng-template>
+            </core-input>
+          </div>
+          <div class="mb-4">
+            <core-input type="multiselect" id="exampleFormControlSelect2" placeholder="Select Option" selectedOptionValue="3" [options]="selectOptions">
+              <ng-template #label>Example select</ng-template>
+            </core-input>
+          </div>
+          <div>
+            <core-input type="textarea" id="exampleFormControlTextarea1" placeholder="Select Option">
+              <ng-template #label>Example select</ng-template>
+            </core-input>
+          </div>
+        </div>
+      </div>
+    </div>
+  
+    <!-- Input Sizing -->
+    <div class="col-md-6">
+      <div class="card">
+        <h5 class="card-header">Input Sizing &amp; Shape</h5>
+        <div class="card-body">
+          <small class="text-light fw-medium">Input text</small>
+  
+          <div class="mt-2 mb-4">
+            <core-input type="text" placeholder="Large input" size="lg">
+              <ng-template #label>Large input</ng-template>
+            </core-input>
+          </div>
+          <div class="mb-4">
+            <core-input type="text" placeholder="Default input">
+              <ng-template #label>Default input</ng-template>
+            </core-input>
+          </div>
+          <div>
+            <core-input type="text" placeholder="Small input" size="sm">
+              <ng-template #label>Small input</ng-template>
+            </core-input>
+          </div>
+        </div>
+        <hr class="m-0">
+        <div class="card-body">
+          <small class="text-light fw-medium">Input select</small>
+          <div class="mt-2 mb-4">
+            <core-input type="select" id="largeSelect" placeholder="Select Option" size="lg" [options]="selectOptions">
+              <ng-template #label>Large select</ng-template>
+            </core-input>
+          </div>
+          <div class="mb-4">
+            <core-input type="select" id="defaultSelect" placeholder="Select Option" [options]="selectOptions">
+              <ng-template #label>Default select</ng-template>
+            </core-input>
+          </div>
+          <div>
+            <core-input type="select" id="smallSelect" placeholder="Select Option" size="sm" [options]="selectOptions">
+              <ng-template #label>Small select</ng-template>
+            </core-input>
+          </div>
+        </div>
+        <hr class="m-0">
+        <div class="card-body">
+          <small class="text-light fw-medium">Input Shape</small>
+          <div class="mt-2">
+            <core-input type="text" placeholder="Rounded input" shape="rounded">
+              <ng-template #label>Rounded input</ng-template>
+            </core-input>
+          </div>
+        </div>
+      </div>
+    </div>
+  
+    <!-- Default Checkboxes and radios & Default checkboxes and radios -->
+    <div class="col-xl-6">
+  
+      <div class="card mb-6">
+        <h5 class="card-header">Checkboxes and Radios</h5>
+        <!-- Checkboxes and Radios -->
+        <div class="row row-bordered g-0">
+          <div class="col-md p-6">
+            <small class="text-light fw-medium">Checkboxes</small>
+            <core-input type="checkbox" id="defaultCheck1">
+              <ng-template #label>Unchecked</ng-template>
+            </core-input>
+
+            <core-input type="checkbox" id="defaultCheck2" [checked]="true">
+              <ng-template #label>Checked</ng-template>
+            </core-input>
+
+            <core-input type="checkbox" id="defaultCheck3" [disabled]="true">
+              <ng-template #label>Disabled Unchecked</ng-template>
+            </core-input>
+
+            <core-input type="checkbox" id="defaultCheck4" [checked]="true" [disabled]="true">
+              <ng-template #label>Disabled Checked</ng-template>
+            </core-input>
+          </div>
+          <div class="col-md p-6">
+            <small class="text-light fw-medium">Radio</small>
+            <core-input type="radio" id="defaultRadio1">
+              <ng-template #label>Unchecked</ng-template>
+            </core-input>
+
+            <core-input type="radio" id="defaultRadio2" [checked]="true">
+              <ng-template #label>Checked</ng-template>
+            </core-input>
+
+            <core-input type="radio" id="defaultRadio3" [disabled]="true">
+              <ng-template #label>Disabled Unchecked</ng-template>
+            </core-input>
+
+            <core-input type="radio" id="defaultRadio4" [checked]="true" [disabled]="true">
+              <ng-template #label>Disabled Checked</ng-template>
+            </core-input>
+          </div>
+        </div>
+        <hr class="m-0">
+        <!-- Inline Checkboxes -->
+        <div class="row row-bordered g-0">
+          <div class="col-md p-6">
+            <small class="text-light fw-medium d-block">Inline Checkboxes</small>
+            <core-input type="checkbox" id="inlineCheckbox1" [inline]="true">
+              <ng-template #label>1</ng-template>
+            </core-input>
+
+            <core-input type="checkbox" id="inlineCheckbox2" [inline]="true" [checked]="true">
+              <ng-template #label>2</ng-template>
+            </core-input>
+
+            <core-input type="checkbox" id="inlineCheckbox2" [inline]="true" [checked]="true" [disabled]="true">
+              <ng-template #label>3</ng-template>
+            </core-input>
+          </div>
+          <div class="col-md p-6">
+            <small class="text-light fw-medium d-block">Inline Radio</small>
+            
+            <core-input type="radio" id="inlineCheckbox1" [inline]="true">
+              <ng-template #label>1</ng-template>
+            </core-input>
+
+            <core-input type="radio" id="inlineCheckbox2" [inline]="true" [checked]="true">
+              <ng-template #label>2</ng-template>
+            </core-input>
+
+            <core-input type="radio" id="inlineCheckbox2" [inline]="true" [checked]="true" [disabled]="true">
+              <ng-template #label>3</ng-template>
+            </core-input>
+          </div>
+        </div>
+      </div>
+  
+      <!-- Switches -->
+      <div class="card mb-6">
+        <h5 class="card-header">Switches</h5>
+        <div class="card-body">
+          <core-input type="switch" id="flexSwitch1">
+            <ng-template #label>Default switch checkbox input</ng-template>
+          </core-input>
+
+          <core-input type="switch" id="flexSwitch2" [checked]="true">
+            <ng-template #label>Checked switch checkbox input</ng-template>
+          </core-input>
+          
+          <core-input type="switch" id="flexSwitch2" [disabled]="true">
+            <ng-template #label>Disabled switch checkbox input</ng-template>
+          </core-input>
+          
+          <core-input type="switch" id="flexSwitch2" [disabled]="true" [checked]="true">
+            <ng-template #label>Disabled checked switch checkbox input</ng-template>
+          </core-input>
+        </div>
+      </div>
+
+      <!-- File input -->
+      <div class="card">
+        <h5 class="card-header">File input</h5>
+        <div class="card-body">
+          <div class="mb-4">
+            <core-input type="file" id="formFile">
+              <ng-template #label>Default file input example</ng-template>
+            </core-input>
+          </div>
+          <div class="mb-4">
+            <core-input type="multiplefile" id="formMultipleFile">
+              <ng-template #label>Multiple files input example</ng-template>
+            </core-input>
+          </div>
+          <div>
+            <core-input type="file" id="formDisabledFile" [disabled]="true">
+              <ng-template #label>Disabled file input example</ng-template>
+            </core-input>
+          </div>
+          <div class="mb-4">
+            <core-input type="file" id="formFileAccept" accept="application/pdf">
+              <ng-template #label>file input example</ng-template>
+              <ng-template #helpText>Only Accept PDF file</ng-template>
+            </core-input>
+          </div>
+        </div>
+      </div>
+    </div>
+  
+    <div class="col-xl-6">
+      <!-- HTML5 Inputs -->
+      <div class="card mb-6">
+        <h5 class="card-header">HTML5 Inputs</h5>
+        <div class="card-body">
+          <core-input type="text" placeholder="Text" layout="horizontal" [labelWidth]="2" [inputWidth]="10" layoutcssClass="mb-3">
+            <ng-template #label>Text</ng-template>
+          </core-input>
+
+          <core-input type="search" placeholder="Search..." layout="horizontal" [labelWidth]="2" [inputWidth]="10" layoutcssClass="mb-3">
+            <ng-template #label>Search</ng-template>
+          </core-input>
+
+          <core-input type="email" placeholder="john@example.com" layout="horizontal" [labelWidth]="2" [inputWidth]="10" layoutcssClass="mb-3">
+            <ng-template #label>Email</ng-template>
+          </core-input>
+
+          <core-input type="url" placeholder="https://themeselection.com" layout="horizontal" [labelWidth]="2" [inputWidth]="10" layoutcssClass="mb-3">
+            <ng-template #label>URL</ng-template>
+          </core-input>
+
+          <core-input type="tel" placeholder="90-(164)-188-556" layout="horizontal" [labelWidth]="2" [inputWidth]="10" layoutcssClass="mb-3">
+            <ng-template #label>Phone</ng-template>
+          </core-input>
+
+          <core-input type="password" placeholder="******" layout="horizontal" [labelWidth]="2" [inputWidth]="10" layoutcssClass="mb-3">
+            <ng-template #label>Password</ng-template>
+          </core-input>
+
+          <core-input type="number" placeholder="1234" layout="horizontal" [labelWidth]="2" [inputWidth]="10" layoutcssClass="mb-3">
+            <ng-template #label>Number</ng-template>
+          </core-input>
+
+          <core-input type="datetime-local" placeholder="2021-06-18T12:30:00" layout="horizontal" [labelWidth]="2" [inputWidth]="10" layoutcssClass="mb-3">
+            <ng-template #label>Datetime</ng-template>
+          </core-input>
+        
+          <core-input type="date" placeholder="2021-06-18" layout="horizontal" [labelWidth]="2" [inputWidth]="10" layoutcssClass="mb-3">
+            <ng-template #label>Date</ng-template>
+          </core-input>
+          
+          <core-input type="month" placeholder="2021-06" layout="horizontal" [labelWidth]="2" [inputWidth]="10" layoutcssClass="mb-3">
+            <ng-template #label>Month</ng-template>
+          </core-input>
+          
+          <core-input type="week" placeholder="2021-W25" layout="horizontal" [labelWidth]="2" [inputWidth]="10" layoutcssClass="mb-3">
+            <ng-template #label>Week</ng-template>
+          </core-input>
+
+          <core-input type="time" placeholder="12:30:00" layout="horizontal" [labelWidth]="2" [inputWidth]="10" layoutcssClass="mb-3">
+            <ng-template #label>Time</ng-template>
+          </core-input>
+
+          <core-input type="color" placeholder="#000111" layout="horizontal" [labelWidth]="2" [inputWidth]="10" layoutcssClass="mb-3">
+            <ng-template #label>Color</ng-template>
+          </core-input>
+
+          <core-input type="range" layout="horizontal" [labelWidth]="2" [inputWidth]="10" layoutcssClass="mb-3">
+            <ng-template #label>Range</ng-template>
+          </core-input>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

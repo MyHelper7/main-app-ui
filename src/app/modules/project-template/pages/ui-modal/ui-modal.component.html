@@ -1,0 +1,390 @@
+<div class="container-xxl flex-grow-1 container-p-y">          
+  <!-- Bootstrap modals -->
+  <div class="card mb-6">
+    <h5 class="card-header">Bootstrap modals</h5>
+    <div class="card-body">
+      <div class="row gy-3">
+
+        <!-- Default Modal -->
+        <div class="col-lg-4 col-md-6">
+          <small class="text-light fw-medium">Default</small>
+          <div class="mt-4">
+            <!-- Button trigger modal -->
+            <button type="button" class="btn btn-primary" (click)="openModal('defaultModal1')">
+              Launch modal
+            </button>
+
+            <!-- Modal -->
+            <core-modal
+              id="defaultModal1"
+              size="md"
+              (onOpen)="handleModalOpen()"
+              (onClose)="handleModalClose()"
+            >
+              <ng-template #modalHeader>
+                <h2 class="text-lg font-bold">Test Modal Header</h2>
+              </ng-template>
+
+              <ng-template #modalBody>
+                <p>This is a dynamically passed modal body content.</p>
+              </ng-template>
+
+              <ng-template #modalFooter>
+                <button
+                  (click)="closeModal('defaultModal')"
+                  class="btn btn-primary">
+                  Close
+                </button>
+              </ng-template>
+            </core-modal>
+          </div>
+        </div>
+
+        <!-- Backdrop click disabled Modal -->
+        <div class="col-lg-4 col-md-6">
+          <small class="text-light fw-medium">Backdrop click disabled</small>
+          <div class="mt-4">
+            <button type="button" class="btn btn-primary" (click)="openModal('defaultModal2')">
+              Modal
+            </button>
+
+            <!-- Modal -->
+            <core-modal
+              id="defaultModal2"
+              size="md"
+              [closeOnBackdropClick]="false"
+              (onOpen)="handleModalOpen()"
+              (onClose)="handleModalClose()"
+            >
+              <ng-template #modalHeader>
+                <h2 class="text-lg font-bold">Test Modal Header</h2>
+              </ng-template>
+
+              <ng-template #modalBody>
+                <p>This is a dynamically passed modal body content.</p>
+              </ng-template>
+
+              <ng-template #modalFooter>
+                <button
+                  (click)="closeModal('defaultModal')"
+                  class="btn btn-primary">
+                  Close
+                </button>
+              </ng-template>
+            </core-modal>
+          </div>
+        </div>
+  
+        <!-- Vertically Centered Modal -->
+        <div class="col-lg-4 col-md-6">
+          <small class="text-light fw-medium">Vertically centered</small>
+          <div class="mt-4">
+            <button type="button" class="btn btn-primary" (click)="openModal('defaultModal3')">
+              Modal
+            </button>
+
+            <!-- Modal -->
+            <core-modal
+              id="defaultModal3"
+              size="md"
+              placement="centered"
+              [closeOnBackdropClick]="false"
+              (onOpen)="handleModalOpen()"
+              (onClose)="handleModalClose()"
+            >
+              <ng-template #modalHeader>
+                <h2 class="text-lg font-bold">Test Modal Header</h2>
+              </ng-template>
+
+              <ng-template #modalBody>
+                <p>This is a dynamically passed modal body content.</p>
+              </ng-template>
+
+              <ng-template #modalFooter>
+                <button
+                  (click)="closeModal('defaultModal')"
+                  class="btn btn-primary">
+                  Close
+                </button>
+              </ng-template>
+            </core-modal>
+          </div>
+        </div>
+      </div>
+    </div>
+    <hr class="m-0">
+    <div class="card-body">
+      <div class="row gy-3">
+        <!-- Modal Sizes -->
+        <div class="col-lg-12 col-md-12">
+          <small class="text-light fw-medium">Sizes</small>
+          <div class="d-flex flex-grow-1 flex-wrap">
+            <button type="button" class="btn btn-primary" (click)="openModal('smallModal')">
+              Small
+            </button>
+
+            <!-- Modal -->
+            <core-modal
+              id="smallModal"
+              size="sm"
+              [closeOnBackdropClick]="false"
+              (onOpen)="handleModalOpen()"
+              (onClose)="handleModalClose()"
+            >
+              <ng-template #modalHeader>
+                <h2 class="text-lg font-bold">Test Modal Header</h2>
+              </ng-template>
+
+              <ng-template #modalBody>
+                <p>This is a dynamically passed modal body content.</p>
+              </ng-template>
+
+              <ng-template #modalFooter>
+                <button
+                  (click)="closeModal('defaultModal')"
+                  class="btn btn-primary">
+                  Close
+                </button>
+              </ng-template>
+            </core-modal>
+
+            <button type="button" class="btn btn-primary" (click)="openModal('mediumModal')">
+              Medium
+            </button>
+
+            <!-- Modal -->
+            <core-modal
+              id="mediumModal"
+              size="md"
+              [closeOnBackdropClick]="false"
+              (onOpen)="handleModalOpen()"
+              (onClose)="handleModalClose()"
+            >
+              <ng-template #modalHeader>
+                <h2 class="text-lg font-bold">Test Modal Header</h2>
+              </ng-template>
+
+              <ng-template #modalBody>
+                <p>This is a dynamically passed modal body content.</p>
+              </ng-template>
+
+              <ng-template #modalFooter>
+                <button
+                  (click)="closeModal('defaultModal')"
+                  class="btn btn-primary">
+                  Close
+                </button>
+              </ng-template>
+            </core-modal>
+
+            <button type="button" class="btn btn-primary" (click)="openModal('largeModal')">
+              Medium
+            </button>
+
+            <!-- Modal -->
+            <core-modal
+              id="largeModal"
+              size="lg"
+              [closeOnBackdropClick]="false"
+              (onOpen)="handleModalOpen()"
+              (onClose)="handleModalClose()"
+            >
+              <ng-template #modalHeader>
+                <h2 class="text-lg font-bold">Test Modal Header</h2>
+              </ng-template>
+
+              <ng-template #modalBody>
+                <p>This is a dynamically passed modal body content.</p>
+              </ng-template>
+
+              <ng-template #modalFooter>
+                <button
+                  (click)="closeModal('defaultModal')"
+                  class="btn btn-primary">
+                  Close
+                </button>
+              </ng-template>
+            </core-modal>
+
+            <button type="button" class="btn btn-primary" (click)="openModal('extraLargeModal')">
+              Extra Large
+            </button>
+
+            <!-- Modal -->
+            <core-modal
+              id="extraLargeModal"
+              size="xl"
+              [closeOnBackdropClick]="false"
+              (onOpen)="handleModalOpen()"
+              (onClose)="handleModalClose()"
+            >
+              <ng-template #modalHeader>
+                <h2 class="text-lg font-bold">Test Modal Header</h2>
+              </ng-template>
+
+              <ng-template #modalBody>
+                <p>This is a dynamically passed modal body content.</p>
+              </ng-template>
+
+              <ng-template #modalFooter>
+                <button
+                  (click)="closeModal('defaultModal')"
+                  class="btn btn-primary">
+                  Close
+                </button>
+              </ng-template>
+            </core-modal>
+
+            <button type="button" class="btn btn-primary" (click)="openModal('fullscreenModal')">
+              Full Screen
+            </button>
+
+            <!-- Modal -->
+            <core-modal
+              id="fullscreenModal"
+              size="fullscreen"
+              [closeOnBackdropClick]="false"
+              (onOpen)="handleModalOpen()"
+              (onClose)="handleModalClose()"
+            >
+              <ng-template #modalHeader>
+                <h2 class="text-lg font-bold">Test Modal Header</h2>
+              </ng-template>
+
+              <ng-template #modalBody>
+                <p>This is a dynamically passed modal body content.</p>
+              </ng-template>
+
+              <ng-template #modalFooter>
+                <button
+                  (click)="closeModal('defaultModal')"
+                  class="btn btn-primary">
+                  Close
+                </button>
+              </ng-template>
+            </core-modal>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--/ Bootstrap modals -->
+  
+  <!-- Animation -->
+  <div class="card mb-6">
+    <h5 class="card-header">Animation</h5>
+    <div class="card-body">
+      <!-- Modal Animation with options -->
+      <small class="text-light fw-medium">Animation Options</small>
+      <div class="row gap-2 gap-sm-0 mt-4">
+        <div class="col-12 col-sm-6 col-md-4">
+          <select class="form-select animation-dropdown" id="animation-dropdown" (change)="onAnimationChange($event)">
+            <optgroup label="Attention Seekers">
+              <option value="fade">fade</option>
+              <option value="bounce">bounce</option>
+              <option value="flash">flash</option>
+              <option value="pulse">pulse</option>
+              <option value="rubberBand">rubberBand</option>
+              <option value="shakeX">shake</option>
+              <option value="swing">swing</option>
+              <option value="tada">tada</option>
+              <option value="wobble">wobble</option>
+              <option value="jello">jello</option>
+              <option value="heartBeat">heartBeat</option>
+            </optgroup>
+  
+            <optgroup label="Bouncing Entrances">
+              <option value="bounceIn">bounceIn</option>
+              <option value="bounceInDown">bounceInDown</option>
+              <option value="bounceInLeft">bounceInLeft</option>
+              <option value="bounceInRight">bounceInRight</option>
+              <option value="bounceInUp">bounceInUp</option>
+            </optgroup>
+  
+            <optgroup label="Fading Entrances">
+              <option value="fadeIn" selected="">fadeIn</option>
+              <option value="fadeInDown">fadeInDown</option>
+              <option value="fadeInDownBig">fadeInDownBig</option>
+              <option value="fadeInLeft">fadeInLeft</option>
+              <option value="fadeInLeftBig">fadeInLeftBig</option>
+              <option value="fadeInRight">fadeInRight</option>
+              <option value="fadeInRightBig">fadeInRightBig</option>
+              <option value="fadeInUp">fadeInUp</option>
+              <option value="fadeInUpBig">fadeInUpBig</option>
+            </optgroup>
+  
+            <optgroup label="Flippers">
+              <option value="flip">flip</option>
+              <option value="flipInX">flipInX</option>
+              <option value="flipInY">flipInY</option>
+            </optgroup>
+  
+            <optgroup label="Lightspeed">
+              <option value="lightSpeedInRight">lightSpeedIn</option>
+            </optgroup>
+  
+            <optgroup label="Rotating Entrances">
+              <option value="rotateIn">rotateIn</option>
+              <option value="rotateInDownLeft">rotateInDownLeft</option>
+              <option value="rotateInDownRight">rotateInDownRight</option>
+              <option value="rotateInUpLeft">rotateInUpLeft</option>
+              <option value="rotateInUpRight">rotateInUpRight</option>
+            </optgroup>
+  
+            <optgroup label="Sliding Entrances">
+              <option value="slideInUp">slideInUp</option>
+              <option value="slideInDown">slideInDown</option>
+              <option value="slideInLeft">slideInLeft</option>
+              <option value="slideInRight">slideInRight</option>
+            </optgroup>
+  
+            <optgroup label="Zoom Entrances">
+              <option value="zoomIn">zoomIn</option>
+              <option value="zoomInDown">zoomInDown</option>
+              <option value="zoomInLeft">zoomInLeft</option>
+              <option value="zoomInRight">zoomInRight</option>
+              <option value="zoomInUp">zoomInUp</option>
+            </optgroup>
+  
+            <optgroup label="Specials">
+              <option value="jackInTheBox">jackInTheBox</option>
+              <option value="rollIn">rollIn</option>
+            </optgroup>
+          </select>
+        </div>
+        <!-- Button trigger modal -->
+        <div class="col-12 col-sm-6 col-md-4">
+          <button type="button" class="btn btn-primary btn-sm" (click)="openModal('animationModal')">
+            Animation Modal
+          </button>
+        </div>
+
+        <!-- Modal -->
+        <core-modal
+          id="animationModal"
+          [closeOnBackdropClick]="false"
+          [animation]="selectedAnimation"
+          (onOpen)="handleModalOpen()"
+          (onClose)="handleModalClose()"
+        >
+          <ng-template #modalHeader>
+            <h2 class="text-lg font-bold">Test Modal Header</h2>
+          </ng-template>
+
+          <ng-template #modalBody>
+            <p>This is a dynamically passed modal body content.</p>
+          </ng-template>
+
+          <ng-template #modalFooter>
+            <button
+              (click)="closeModal('defaultModal')"
+              class="btn btn-primary">
+              Close
+            </button>
+          </ng-template>
+        </core-modal>
+      </div>
+    </div>
+  </div>
+  <!--/ Animation -->
+</div>

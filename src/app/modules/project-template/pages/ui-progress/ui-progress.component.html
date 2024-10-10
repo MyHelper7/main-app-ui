@@ -1,0 +1,159 @@
+<div class="container-xxl flex-grow-1 container-p-y">
+  <!-- Options -->
+  <div class="card mb-6">
+    <h5 class="card-header">Progress bars</h5>
+    <div class="card-body">
+      <div class="text-light small fw-medium">Default</div>
+      <div class="demo-vertical-spacing">
+        <div class="mb-3">
+          <core-progressbar variant="primary" [value]="25"></core-progressbar>
+        </div>
+        
+        <div class="mb-3">
+          <core-progressbar variant="primary" [value]="75"></core-progressbar>
+        </div>
+      </div>
+    </div>
+    <hr class="m-0" />
+    <div class="card-body">
+      <div class="text-light small fw-medium">Height</div>
+      <div class="demo-vertical-spacing">
+        <div class="mb-3">
+          <core-progressbar variant="primary" [value]="75" height="10px"></core-progressbar>
+        </div>
+        
+        <div class="mb-3">
+          <core-progressbar variant="primary" [value]="75" height="20px"></core-progressbar>
+        </div>
+      </div>
+    </div>
+    <hr class="m-0" />
+    <div class="card-body">
+      <div class="text-light small fw-medium">With Label</div>
+      <div class="demo-vertical-spacing">
+        <div class="mb-3">
+          <core-progressbar variant="primary" [value]="25" [showValue]="true"  height="15px"></core-progressbar>
+        </div>
+        
+        <div class="mb-3">
+          <core-progressbar variant="primary" [value]="75" [showValue]="true" height="15px"></core-progressbar>
+        </div>
+      </div>
+    </div>
+    <hr class="m-0" />
+    <div class="card-body">
+      <div class="text-light small fw-medium">With Custom Label</div>
+      <div class="demo-vertical-spacing">
+        <div class="mb-3">
+          <core-progressbar variant="primary" [value]="25" [showValue]="true" height="20px"></core-progressbar>
+        </div>
+        
+        <div class="mb-3">
+          <core-progressbar variant="primary" [value]="75" [showValue]="true" height="20px"></core-progressbar>
+        </div>
+
+        <div class="mb-3">
+          <core-progressbar variant="primary" [value]="75" height="20px">Custom Label</core-progressbar>
+        </div>
+
+        <div class="mb-3">
+          <core-progressbar variant="primary" [value]="75" height="20px" textColor="black">Black Text Label</core-progressbar>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--/ Options -->
+
+  <!-- Backgrounds -->
+  <div class="card mb-6">
+    <h5 class="card-header">Backgrounds</h5>
+    <div class="card-body">
+      <div class="demo-vertical-spacing demo-only-element">
+        <div class="mb-3">
+          <core-progressbar variant="primary" [value]="20"></core-progressbar>
+        </div>
+        <div class="mb-3">
+          <core-progressbar variant="secondary" [value]="30"></core-progressbar>
+        </div>
+        <div class="mb-3">
+          <core-progressbar variant="success" [value]="40"></core-progressbar>
+        </div>
+        <div class="mb-3">
+          <core-progressbar variant="danger" [value]="35"></core-progressbar>
+        </div>
+        <div class="mb-3">
+          <core-progressbar variant="warning" [value]="55"></core-progressbar>
+        </div>
+        <div class="mb-3">
+          <core-progressbar variant="info" [value]="25"></core-progressbar>
+        </div>
+        <div class="mb-3">
+          <core-progressbar variant="dark" [value]="85"></core-progressbar>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--/ Backgrounds -->
+
+  <!-- Striped -->
+  <div class="card mb-6">
+    <h5 class="card-header">Striped</h5>
+    <div class="card-body">
+      <div class="demo-vertical-spacing demo-only-element">
+        <div class="mb-3">
+          <core-progressbar variant="primary" [value]="20" [striped]="true"></core-progressbar>
+        </div>
+        <div class="mb-3">
+          <core-progressbar variant="secondary" [value]="30" [striped]="true"></core-progressbar>
+        </div>
+        <div class="mb-3">
+          <core-progressbar variant="success" [value]="40" [striped]="true"></core-progressbar>
+        </div>
+        <div class="mb-3">
+          <core-progressbar variant="danger" [value]="35" [striped]="true"></core-progressbar>
+        </div>
+        <div class="mb-3">
+          <core-progressbar variant="warning" [value]="55" [striped]="true"></core-progressbar>
+        </div>
+        <div class="mb-3">
+          <core-progressbar variant="info" [value]="25" [striped]="true"></core-progressbar>
+        </div>
+        <div class="mb-3">
+          <core-progressbar variant="dark" [value]="85" [striped]="true"></core-progressbar>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--/ Striped -->
+
+  <!-- Animated -->
+  <div class="card mb-6">
+    <h5 class="card-header">Animated</h5>
+    <div class="card-body">
+      <div class="demo-vertical-spacing demo-only-element">
+        <div class="mb-3">
+          <core-progressbar variant="primary" [value]="20" [striped]="true" [animated]="true"></core-progressbar>
+        </div>
+        <div class="mb-3">
+          <core-progressbar variant="secondary" [value]="30" [striped]="true" [animated]="true"></core-progressbar>
+        </div>
+        <div class="mb-3">
+          <core-progressbar variant="success" [value]="40" [striped]="true" [animated]="true"></core-progressbar>
+        </div>
+        <div class="mb-3">
+          <core-progressbar variant="danger" [value]="35" [striped]="true" [animated]="true"></core-progressbar>
+        </div>
+        <div class="mb-3">
+          <core-progressbar variant="warning" [value]="55" [striped]="true" [animated]="true"></core-progressbar>
+        </div>
+        <div class="mb-3">
+          <core-progressbar variant="info" [value]="25" [striped]="true" [animated]="true"></core-progressbar>
+        </div>
+        <div class="mb-3">
+          <core-progressbar variant="dark" [value]="85" [striped]="true" [animated]="true"></core-progressbar>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--/ Animated -->
+</div>

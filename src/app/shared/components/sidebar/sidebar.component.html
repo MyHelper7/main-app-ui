@@ -1,0 +1,89 @@
+<aside id="layout-menu" class="layout-menu menu-vertical menu bg-menu-theme">
+  <div class="app-brand">
+    <a href="#" class="app-brand-link">
+      <span class="app-brand-logo" *ngIf="brand?.logo">
+        <ng-container *ngIf="brand?.logo?.type === 'image'">
+          <img [src]="brand?.logo.url" [alt]="brand?.name" class="img-fluid" />
+        </ng-container>
+      </span>
+      <span class="app-brand-text menu-text fw-bold ms-2" *ngIf="brand?.name">
+        <core-dynamic-content [content]="brand?.name"></core-dynamic-content>
+      </span>
+    </a>
+
+    <button class="layout-menu-toggle menu-link text-large ms-auto d-block d-xl-none" (click)="closeSidebar()">
+      <i class="bx bx-chevron-left bx-sm d-flex align-items-center justify-content-center"></i>
+    </button>
+  </div>
+
+  <div class="menu-inner-shadow"></div>
+
+  <ul class="menu-inner py-1 horizontal-scroll-auto scroll-thin">
+    <ng-container *ngFor="let item of items">
+      <ng-container *ngIf="item.header">
+        <li class="menu-header small text-uppercase cursor-default">
+          <span class="menu-header-text">{{item.title}}</span>
+        </li>
+      </ng-container>
+      <ng-container *ngIf="!item.header">
+        <li class="menu-item" [class.active]="item.active" [class.open]="item.open">
+          <ng-container
+            [ngTemplateOutlet]="optionTemplate"
+            [ngTemplateOutletContext]="{item: item}">
+          </ng-container>
+
+          <ul class="menu-sub" *ngIf="item.subItems">
+            <ng-container *ngFor="let subItem of item.subItems">
+              <li class="menu-item" [class.active]="subItem.active">
+                <ng-container
+                  [ngTemplateOutlet]="optionTemplate"
+                  [ngTemplateOutletContext]="{item: subItem}">
+                </ng-container>
+              </li>
+            </ng-container>
+          </ul>
+        </li>
+      </ng-container>
+    </ng-container>
+  </ul>
+</aside>
+
+<ng-template #optionTemplate let-item='item'>
+  <ng-container *ngIf="item.subItems?.length; else linkTemplate">
+    <span
+      class="menu-link menu-toggle cursor-pointer" 
+      (click)="handleItemClick($event, item)"
+    >
+      <ng-container [ngTemplateOutlet]="itemContent"></ng-container>
+    </span>
+  </ng-container>
+  <ng-template #linkTemplate>
+    <a
+      *ngIf="item.external; else internalLink"
+      [href]="item.link" 
+      class="menu-link"
+      target="_blank" 
+      rel="noopener noreferrer"
+      (click)="handleItemClick($event, item)"
+    >
+      <ng-container [ngTemplateOutlet]="itemContent"></ng-container>
+    </a>
+    <ng-template #internalLink>
+      <a
+        [routerLink]="item.link" 
+        class="menu-link" 
+        (click)="handleItemClick($event, item)"
+      >
+      <ng-container [ngTemplateOutlet]="itemContent"></ng-container>
+      </a>
+    </ng-template>
+  </ng-template>
+
+  <ng-template #itemContent>
+    <i class="menu-icon tf-icons {{ item.icon }}" *ngIf="item.icon"></i>
+    <div class="text-truncate">{{ item.title }}</div>
+    <core-badge [variant]="item.badge.variant" [label]="item.badge.label" cssClass="ms-auto text-uppercase {{item.badge.cssClass}}" *ngIf="item.badge?.text">
+      {{ item.badge?.text }}
+    </core-badge>
+  </ng-template>
+</ng-template>

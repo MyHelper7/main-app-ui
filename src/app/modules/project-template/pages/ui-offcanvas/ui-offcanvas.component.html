@@ -1,0 +1,215 @@
+<div class="container-xxl flex-grow-1 container-p-y">
+  <div class="card mb-6">
+    <h5 class="card-header">Placements</h5>
+    <div class="card-body">
+      <div class="row gy-3">
+        <!-- Default Offcanvas -->
+        <div class="col-lg-3 col-md-6">
+          <small class="text-light fw-medium mb-4">Start (Default)</small>
+          <div class="mt-4">
+            <button
+              class="btn btn-primary"
+              type="button"
+              (click)="showCanvas('test1')">
+              Toggle Start
+            </button>
+
+            <core-offcanvas id="test1" position="start">
+              <ng-template #offcanvasTitle>
+                <h5 class="offcanvas-title">OffCanvas 1 Title</h5>
+              </ng-template>
+              <ng-template #offcanvasContent>
+                <p class="text-center">
+                  Lorem ipsum, or lipsum as it is sometimes known, is dummy text used in laying out print,
+                  graphic or web designs. The passage is attributed to an unknown typesetter in the 15th
+                  century who is thought to have scrambled parts of Cicero's De Finibus Bonorum et Malorum
+                  for use in a type specimen book.
+                </p>
+                <button type="button" class="btn btn-primary mb-2 d-grid w-100">Continue</button>
+                <button
+                  type="button"
+                  class="btn btn-outline-secondary d-grid w-100"
+                  data-bs-dismiss="offcanvas">
+                  Cancel
+                </button>
+              </ng-template>
+            </core-offcanvas>
+          </div>
+        </div>
+
+        <!-- End Offcanvas -->
+        <div class="col-lg-3 col-md-6">
+          <small class="text-light fw-medium mb-4">End</small>
+          <div class="mt-4">
+            <button
+              class="btn btn-primary"
+              type="button"
+              (click)="showCanvas('test2')">
+              Toggle End
+            </button>
+            <core-offcanvas id="test2" position="end">
+              <ng-template #offcanvasTitle>
+                <h5 class="offcanvas-title">OffCanvas 1 Title</h5>
+              </ng-template>
+              <ng-template #offcanvasContent>
+                <p class="text-center">
+                  Lorem ipsum, or lipsum as it is sometimes known, is dummy text used in laying out print,
+                  graphic or web designs. The passage is attributed to an unknown typesetter in the 15th
+                  century who is thought to have scrambled parts of Cicero's De Finibus Bonorum et Malorum
+                  for use in a type specimen book.
+                </p>
+                <button type="button" class="btn btn-primary mb-2 d-grid w-100">Continue</button>
+                <button
+                  type="button"
+                  class="btn btn-outline-secondary d-grid w-100"
+                  data-bs-dismiss="offcanvas">
+                  Cancel
+                </button>
+              </ng-template>
+            </core-offcanvas>
+          </div>
+        </div>
+
+        <!-- Top Offcanvas -->
+        <div class="col-lg-3 col-md-6">
+          <small class="text-light fw-medium mb-4">Top</small>
+          <div class="mt-4">
+            <button
+              class="btn btn-primary"
+              type="button"
+              (click)="showCanvas('test3')">
+              Toggle Top
+            </button>
+            
+            <core-offcanvas id="test3" position="top">
+              <ng-template #offcanvasTitle>
+                <h5 class="offcanvas-title">OffCanvas 1 Title</h5>
+              </ng-template>
+              <ng-template #offcanvasContent>
+                <p class="text-center">
+                  Lorem ipsum, or lipsum as it is sometimes known, is dummy text used in laying out print,
+                  graphic or web designs. The passage is attributed to an unknown typesetter in the 15th
+                  century who is thought to have scrambled parts of Cicero's De Finibus Bonorum et Malorum
+                  for use in a type specimen book.
+                </p>
+                <button type="button" class="btn btn-primary mb-2 d-grid w-100">Continue</button>
+                <button
+                  type="button"
+                  class="btn btn-outline-secondary d-grid w-100"
+                  data-bs-dismiss="offcanvas">
+                  Cancel
+                </button>
+              </ng-template>
+            </core-offcanvas>
+          </div>
+        </div>
+
+        <!-- Bottom Offcanvas -->
+        <div class="col-lg-3 col-md-6">
+          <small class="text-light fw-medium mb-4">Bottom</small>
+          <div class="mt-4">
+            <button
+              class="btn btn-primary"
+              type="button"
+              (click)="showCanvas('test4')">
+              Toggle Bottom
+            </button>
+            <core-offcanvas id="test4" position="bottom">
+              <ng-template #offcanvasTitle>
+                <h5 class="offcanvas-title">OffCanvas 1 Title</h5>
+              </ng-template>
+              <ng-template #offcanvasContent>
+                <p class="text-center">
+                  Lorem ipsum, or lipsum as it is sometimes known, is dummy text used in laying out print,
+                  graphic or web designs. The passage is attributed to an unknown typesetter in the 15th
+                  century who is thought to have scrambled parts of Cicero's De Finibus Bonorum et Malorum
+                  for use in a type specimen book.
+                </p>
+                <button type="button" class="btn btn-primary mb-2 d-grid w-100">Continue</button>
+                <button
+                  type="button"
+                  class="btn btn-outline-secondary d-grid w-100"
+                  data-bs-dismiss="offcanvas">
+                  Cancel
+                </button>
+              </ng-template>
+            </core-offcanvas>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <h5 class="card-header">Backdrop</h5>
+    <div class="card-body">
+      <div class="row gy-3">
+        <!-- Hide Offcanvas -->
+        <div class="col-lg-4 col-md-6">
+          <small class="text-light fw-medium mb-4">Hide Backdrop</small>
+          <div class="mt-4">
+            <button
+              class="btn btn-primary"
+              type="button"
+              (click)="showCanvas('test5')">
+              Hide Backdrop
+            </button>
+            <core-offcanvas id="test5" position="bottom" [backdrop]="false">
+              <ng-template #offcanvasTitle>
+                <h5 class="offcanvas-title">OffCanvas 1 Title</h5>
+              </ng-template>
+              <ng-template #offcanvasContent>
+                <p class="text-center">
+                  Lorem ipsum, or lipsum as it is sometimes known, is dummy text used in laying out print,
+                  graphic or web designs. The passage is attributed to an unknown typesetter in the 15th
+                  century who is thought to have scrambled parts of Cicero's De Finibus Bonorum et Malorum
+                  for use in a type specimen book.
+                </p>
+                <button type="button" class="btn btn-primary mb-2 d-grid w-100">Continue</button>
+                <button
+                  type="button"
+                  class="btn btn-outline-secondary d-grid w-100"
+                  data-bs-dismiss="offcanvas">
+                  Cancel
+                </button>
+              </ng-template>
+            </core-offcanvas>
+          </div>
+        </div>
+
+        <!-- Disable Click on backdrop Offcanvas -->
+        <div class="col-lg-4 col-md-6">
+          <small class="text-light fw-medium mb-4">Disable Backdrop Click</small>
+          <div class="mt-4">
+            <button
+              class="btn btn-primary"
+              type="button"
+              (click)="showCanvas('test6')">
+              Disable Backdrop Click
+            </button>
+            <core-offcanvas id="test6" position="bottom" [closeOnBackdropClick]="false">
+              <ng-template #offcanvasTitle>
+                <h5 class="offcanvas-title">OffCanvas 1 Title</h5>
+              </ng-template>
+              <ng-template #offcanvasContent>
+                <p class="text-center">
+                  Lorem ipsum, or lipsum as it is sometimes known, is dummy text used in laying out print,
+                  graphic or web designs. The passage is attributed to an unknown typesetter in the 15th
+                  century who is thought to have scrambled parts of Cicero's De Finibus Bonorum et Malorum
+                  for use in a type specimen book.
+                </p>
+                <button type="button" class="btn btn-primary mb-2 d-grid w-100">Continue</button>
+                <button
+                  type="button"
+                  class="btn btn-outline-secondary d-grid w-100"
+                  data-bs-dismiss="offcanvas">
+                  Cancel
+                </button>
+              </ng-template>
+            </core-offcanvas>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

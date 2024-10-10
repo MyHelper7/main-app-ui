@@ -1,0 +1,8 @@
+<ng-container *ngIf="content">
+  <ng-container *ngIf="isTemplateRef(content); else renderContent">
+    <ng-container *ngTemplateOutlet="content"></ng-container>
+  </ng-container>
+  <ng-template #renderContent>
+    <span class="d-inline-block" [innerHTML]="isHtmlContent(content) ? content.html : content"></span>
+  </ng-template>
+</ng-container>

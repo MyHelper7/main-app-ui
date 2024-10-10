@@ -1,0 +1,257 @@
+<div class="container-xxl flex-grow-1 container-p-y">
+  <div class="row g-6">
+    <!-- Basic -->
+    <div class="col-md-6">
+      <div class="card">
+        <h5 class="card-header">Basic</h5>
+        <div class="card-body demo-vertical-spacing demo-only-element">
+          <div class="mb-3">
+            <core-input type="text" id="inputGroup1">
+              <ng-template #startInputGroupHTML>#64</ng-template>
+            </core-input>
+          </div>
+
+          <div class="mb-3">
+            <core-input type="text" id="inputGroup2" placeholder="&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;" action="password">
+              <ng-template #label>Password</ng-template>
+            </core-input>
+          </div>
+
+          <div class="mb-3">
+            <core-input type="text" id="inputGroup3" placeholder="Recipient's username">
+              <ng-template #endInputGroupHTML>example.com</ng-template>
+            </core-input>
+          </div>
+
+          <div class="mb-3">
+            <core-input type="text" id="inputGroup4" placeholder="URL">
+              <ng-template #startInputGroupHTML>https://example.com/users/</ng-template>
+            </core-input>
+          </div>
+
+          <div class="mb-3">
+            <core-input type="text" id="inputGroup5" placeholder="Amount">
+              <ng-template #startInputGroupHTML>$</ng-template>
+              <ng-template #endInputGroupHTML let-style="end">.00</ng-template>
+            </core-input>
+          </div>
+
+          <div class="mb-3">
+            <core-input type="textarea" id="inputGroup6" placeholder="Comment" [rows]="2">
+              <ng-template #startInputGroupHTML>With textarea</ng-template>
+            </core-input>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Merged -->
+    <div class="col-md-6">
+      <div class="card">
+        <h5 class="card-header">Merged</h5>
+        <div class="card-body demo-vertical-spacing demo-only-element">
+          <div class="mb-3">
+            <core-input type="text" id="inputGroup1">
+              <ng-template #startInputGroupHTML>#64</ng-template>
+            </core-input>
+          </div>
+
+          <div class="mb-3">
+            <core-input type="text" id="inputGroup2" placeholder="&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;" action="password">
+              <ng-template #label>Password</ng-template>
+            </core-input>
+          </div>
+
+          <div class="mb-3">
+            <core-input type="text" id="inputGroup3" placeholder="Recipient's username">
+              <ng-template #endInputGroupHTML>example.com</ng-template>
+            </core-input>
+          </div>
+
+          <div class="mb-3">
+            <core-input type="text" id="inputGroup4" placeholder="URL">
+              <ng-template #startInputGroupHTML>https://example.com/users/</ng-template>
+            </core-input>
+          </div>
+
+          <div class="mb-3">
+            <core-input type="text" id="inputGroup5" placeholder="Amount">
+              <ng-template #startInputGroupHTML>$</ng-template>
+              <ng-template #endInputGroupHTML let-style="end">.00</ng-template>
+            </core-input>
+          </div>
+
+          <div class="mb-3">
+            <core-input type="textarea" id="inputGroup6" placeholder="Comment" [rows]="2">
+              <ng-template #startInputGroupHTML>With textarea</ng-template>
+            </core-input>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Sizing -->
+    <div class="col-md-6">
+      <div class="card mb-6">
+        <h5 class="card-header">Sizing & Shape</h5>
+        <div class="card-body demo-vertical-spacing demo-only-element">
+          <div class="mb-3">
+            <core-input type="text" id="inputGroup1" size="lg">
+              <ng-template #startInputGroupHTML>A</ng-template>
+            </core-input>
+          </div>
+
+          <div class="mb-3">
+            <core-input type="text" id="inputGroup2">
+              <ng-template #startInputGroupHTML>A</ng-template>
+            </core-input>
+          </div>
+
+          <div class="mb-3">
+            <core-input type="text" id="inputGroup3" size="sm">
+              <ng-template #startInputGroupHTML>A</ng-template>
+            </core-input>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Checkbox and radio addons -->
+    <div class="col-md-6">
+      <div class="card">
+        <h5 class="card-header">Checkbox and radio addons</h5>
+        <div class="card-body demo-vertical-spacing demo-only-element">
+          <div class="mb-3">
+            <core-input type="text" id="inputGroup4">
+              <ng-template #startInputGroupHTML>
+                <core-input type="checkbox" id="inputGroup5" inputContainercssClass="mb-0"></core-input>
+              </ng-template>
+            </core-input>
+          </div>
+
+          <div class="mb-3">
+            <core-input type="text" id="inputGroup4">
+              <ng-template #startInputGroupHTML>
+                <core-input type="radio" id="inputGroup5" inputContainercssClass="mb-0"></core-input>
+              </ng-template>
+            </core-input>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <!-- Multiple inputs & addon -->
+    <div class="col-md-6">
+      <div class="card mb-6">
+        <h5 class="card-header">Multiple inputs & addon</h5>
+
+        <div class="card-body demo-vertical-spacing demo-only-element">
+          <small class="text-light fw-medium d-block">Multiple inputs</small>
+          <div class="input-group">
+            <span class="input-group-text">First and last name</span>
+            <input type="text" aria-label="First name" class="form-control" />
+            <input type="text" aria-label="Last name" class="form-control" />
+          </div>
+
+          <small class="text-light fw-medium d-block pt-4">Multiple addons</small>
+          <div class="mb-3">
+            <core-input type="text" id="multipleInputGroup1">
+              <ng-template #startInputGroupContent>
+                <span class="input-group-text">$</span>
+                <span class="input-group-text">0.00</span>
+              </ng-template>
+            </core-input>
+          </div>
+
+          <div class="mb-3">
+            <core-input type="text" id="multipleInputGroup1">
+              <ng-template #endInputGroupContent>
+                <span class="input-group-text">$</span>
+                <span class="input-group-text">0.00</span>
+              </ng-template>
+            </core-input>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-6">
+      <div class="card mb-6">
+        <h5 class="card-header">Button with dropdowns & addons</h5>
+        <div class="card-body demo-vertical-spacing demo-only-element">
+          <small class="text-light fw-medium d-block">Button addons</small>
+
+          <div class="mb-3">
+            <core-input type="text" id="multipleInputGroup1">
+              <ng-template #startInputGroupContent>
+                <button class="btn btn-outline-primary" type="button" id="button-addon1">Button</button>
+              </ng-template>
+            </core-input>
+          </div>
+
+          <div class="mb-3">
+            <core-input type="text" id="multipleInputGroup1">
+              <ng-template #endInputGroupContent>
+                <button class="btn btn-outline-primary" type="button" id="button-addon1">Button</button>
+              </ng-template>
+            </core-input>
+          </div>
+
+          <div class="mb-3">
+            <core-input type="text" id="multipleInputGroup1">
+              <ng-template #startInputGroupContent>
+                <button class="btn btn-outline-primary" type="button">Button</button>
+                <button class="btn btn-outline-primary" type="button">Button</button>
+              </ng-template>
+            </core-input>
+          </div>
+
+          <div class="mb-3">
+            <core-input type="text" id="multipleInputGroup1">
+              <ng-template #endInputGroupContent>
+                <button class="btn btn-outline-primary" type="button">Button</button>
+                <button class="btn btn-outline-primary" type="button">Button</button>
+              </ng-template>
+            </core-input>
+          </div>
+
+          <small class="text-light fw-medium d-block pt-4">Button with dropdowns</small>
+          <div class="mb-3">
+            <core-input type="text" id="multipleInputGroup1">
+              <ng-template #startInputGroupContent>
+                <core-dropdown [items]="dropDownItems" cssClass="rounded-0 rounded-start">
+                  Dropdown
+                </core-dropdown>
+              </ng-template>
+            </core-input>
+          </div>
+          <div class="mb-3">
+            <core-input type="text" id="multipleInputGroup1">
+              <ng-template #endInputGroupContent>
+                <core-dropdown [items]="dropDownItems" cssClass="rounded-0 rounded-end">
+                  Dropdown
+                </core-dropdown>
+              </ng-template>
+            </core-input>
+          </div>
+
+          <div class="mb-3">
+            <core-input type="text" id="multipleInputGroup1">
+              <ng-template #startInputGroupContent>
+                <core-dropdown [items]="dropDownItems" cssClass="rounded-0 rounded-start">
+                  Dropdown
+                </core-dropdown>
+              </ng-template>
+              <ng-template #endInputGroupContent>
+                <core-dropdown [items]="dropDownItems" cssClass="rounded-0 rounded-end">
+                  Dropdown
+                </core-dropdown>
+              </ng-template>
+            </core-input>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

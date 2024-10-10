@@ -1,0 +1,5 @@
+<div [ngClass]="alertClass" role="alert">
+  <ng-content></ng-content>
+
+  <button type="button" class="btn-close" aria-label="Close" (click)="dismissible = false" *ngIf="dismissible"></button>
+</div>

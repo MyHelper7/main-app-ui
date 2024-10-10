@@ -1,0 +1,24 @@
+<div *ngIf="backdrop && isVisible" class="offcanvas-backdrop fade show" (click)="handleBackdropClick()"></div>
+<div
+  [ngClass]="offcanvasClass"
+  tabindex="-1"
+  [attr.id]="id"
+  [class.show]="isVisible">
+  
+  <div class="offcanvas-header" *ngIf="isVisible">
+    <ng-container *ngIf="titleTemplate; else defaultTitle">
+      <core-dynamic-content [content]="titleTemplate"></core-dynamic-content>
+    </ng-container>
+    <ng-template #defaultTitle>
+      <h5 class="offcanvas-title">{{ id }}</h5>
+    </ng-template>
+    
+    <button type="button" class="btn-close text-reset" (click)="close()" aria-label="Close"></button>
+  </div>
+  
+  <div class="offcanvas-body my-auto mx-0 flex-grow-0" *ngIf="isVisible">
+    <ng-container *ngIf="contentTemplate;">
+      <core-dynamic-content [content]="contentTemplate"></core-dynamic-content>
+    </ng-container>
+  </div>
+</div>

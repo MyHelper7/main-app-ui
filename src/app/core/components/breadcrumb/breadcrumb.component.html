@@ -1,0 +1,9 @@
+<nav aria-label="breadcrumb" [ngClass]="styleClass">
+  <ol class="breadcrumb">
+    <li *ngFor="let item of items; let last = last" class="breadcrumb-item" [ngClass]="{'active': last}">
+      <a *ngIf="!last && item.url && item.external" [href]="item.url">{{ item.label }}</a>
+      <a *ngIf="!last && item.url && !item.external" [routerLink]="item.url">{{ item.label }}</a>
+      <span *ngIf="last || !item.url" class="cursor-default">{{ item.label }}</span>
+    </li>
+  </ol>
+</nav>

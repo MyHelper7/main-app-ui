@@ -1,0 +1,20 @@
+
+.menu .app-brand {
+  height: 64px;
+  margin-bottom: 10px;
+}
+
+.app-brand-logo svg {
+  width: 22px;
+  height: 38px;
+}
+
+.app-brand-text {
+  font-size: 1.75rem;
+  letter-spacing: -0.5px;
+}
+
+/* Navbar page z-index issue solution */
+.content-wrapper .navbar {
+  z-index: auto;
+}
